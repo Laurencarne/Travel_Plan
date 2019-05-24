@@ -1,0 +1,2 @@
+class TripCountry < ApplicationRecord
+end
