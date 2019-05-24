@@ -14,14 +14,17 @@ ActiveRecord::Schema.define(version: 2019_05_24_153428) do
 
   create_table "activities", force: :cascade do |t|
     t.string "name"
-    t.string "location"
     t.integer "price"
     t.text "notes"
     t.text "review"
     t.string "photo"
-    t.integer "country_id"
     t.text "tips"
     t.boolean "published"
+    t.integer "rating"
+    t.string "street_name"
+    t.string "city"
+    t.string "zip_code"
+    t.integer "country_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -32,6 +35,7 @@ ActiveRecord::Schema.define(version: 2019_05_24_153428) do
     t.string "language"
     t.string "flag"
     t.string "photo"
+    t.string "alpha2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -45,10 +49,12 @@ ActiveRecord::Schema.define(version: 2019_05_24_153428) do
 
   create_table "trips", force: :cascade do |t|
     t.string "name"
-    t.datetime "date"
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.string "travel_companions"
-    t.integer "user_id"
     t.boolean "published"
+    t.text "notes"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -57,6 +63,8 @@ ActiveRecord::Schema.define(version: 2019_05_24_153428) do
     t.string "name"
     t.string "email"
     t.string "encrypted_password"
+    t.string "first_name"
+    t.string "last_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

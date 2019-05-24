@@ -6,6 +6,7 @@ class CreateCountries < ActiveRecord::Migration[5.2]
       t.string :language
       t.string :flag
       t.string :photo
+      t.string :alpha2
 
       t.timestamps
     end
