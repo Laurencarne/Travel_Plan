@@ -1,0 +1,10 @@
+<div class="container">
+  <br>
+  <h1 class="text-danger">Activities: </h1>
+  <br>
+  <ul>
+    <% @activities.each do |activity| %>
+    <li><%= link_to "#{activity.name} #{activity.country.name}", activity_path(activity), :class => "text-info"%></li>
+    <% end %>
+  </ul>
+</div>
