@@ -1,0 +1,25 @@
+
+<div class="container">
+  <div class="jumbotron text-center">
+    <h1 class="display-4">Welcome to Africa</h1>
+    <p class="lead">Africa has an array of diverse ecosystems, from sandy deserts to lush rain forests. Africa is sometimes nicknamed the "Mother Continent" due to its being the oldest inhabited continent on Earth. Humans and human ancestors have lived in Africa for more than 5 million years.</p>
+  </div>
+</div>
+
+<div class="container">
+  <br>
+  <div class="row">
+    <% @africa.each do |continent| %>
+    <br>
+    <div class="col-sm-3">
+      <div class="card text-center">
+        <img src="https://i.pinimg.com/originals/e6/fe/10/e6fe10de8291856b31c75741279523e3.jpg" class="card-img-top" alt="African Sunset">
+        <div class="card-body">
+          <h5 class="card-title"><%= continent %></h5>
+          <p class="card-text">Africa, Safari, beaches, tribal dances and more.</p>
+          <a href="/countries/show" class="btn btn-warning">Show Me More</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

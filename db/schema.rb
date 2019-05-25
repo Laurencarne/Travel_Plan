@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_24_153428) do
+ActiveRecord::Schema.define(version: 2019_05_25_232231) do
 
   create_table "activities", force: :cascade do |t|
     t.string "name"
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 2019_05_24_153428) do
     t.string "alpha2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "continent"
+    t.string "continent_image"
   end
 
   create_table "trip_countries", force: :cascade do |t|

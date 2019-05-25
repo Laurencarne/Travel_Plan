@@ -4,7 +4,7 @@
   <br>
   <ul>
     <% @activities.each do |activity| %>
-    <li><%= link_to "#{activity.name} #{activity.country.name}", activity_path(activity), :class => "text-info"%></li>
+    <li><%= link_to "#{activity.name} in #{activity.country.name}", activity_path(activity), :class => "text-info"%></li>
     <% end %>
   </ul>
 </div>

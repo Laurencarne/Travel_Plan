@@ -2,7 +2,7 @@ class CountriesController < ApplicationController
   before_action :set_country, only: [:show, :edit, :update, :destroy]
 
   def index
-    @countrys = Country.all
+    @countries = Country.show_only_continents
   end
 
   def new
@@ -22,21 +22,28 @@ class CountriesController < ApplicationController
   def show
   end
 
-  def edit
+  def africa
+    @africa = Country.sort_by_continent("africa")
   end
 
-  def update
-    if @country.update(country_params)
-      redirect_to country_path(@country)
-    else
-      render :edit
-    end
+  def asia
+    @africa = Country.sort_by_continent("asia")
   end
 
-  def destroy
-    @country.destroy
-    redirect_to countrys_path
+  def europe
+    @africa = Country.sort_by_continent("europe")
   end
+
+  def south_america
+    @africa = Country.sort_by_continent("south america")
+  end
+
+  def north_america
+    @africa = Country.sort_by_continent("north america")
+  end
+
+
+
 
   private
 

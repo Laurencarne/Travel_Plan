@@ -1,0 +1,25 @@
+
+<div class="container">
+  <div class="jumbotron text-center">
+    <h1 class="display-4">Welcome to Europe</h1>
+    <p class="lead">Europe is a continent located entirely in the Northern Hemisphere and mostly in the Eastern Hemisphere. It is bordered by the Arctic Ocean to the north, the Atlantic Ocean to the west, Asia to the east, and the Mediterranean Sea to the south. It comprises the westernmost part of Eurasia.</p>
+  </div>
+</div>
+
+<div class="container">
+  <br>
+  <div class="row">
+    <% @africa.each do |continent| %>
+    <br>
+    <div class="col-sm-3">
+      <div class="card text-center">
+        <img src="https://wallpapercave.com/wp/q5hJJjP.jpg" class="card-img-top" alt="European City">
+        <div class="card-body">
+          <h5 class="card-title"><%= continent %></h5>
+          <p class="card-text">Europe, second smallest of the world's continents, composed of the westward-projecting peninsulas of Eurasia</p>
+          <a href="/countries/show" class="btn btn-warning">Show Me More</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

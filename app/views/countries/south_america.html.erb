@@ -1,0 +1,25 @@
+
+<div class="container">
+  <div class="jumbotron text-center">
+    <h1 class="display-4">Welcome to South America</h1>
+    <p class="lead">South America is a continent in the Western Hemisphere, mostly in the Southern Hemisphere, with a relatively small portion in the Northern Hemisphere. It may also be considered a subcontinent of the Americas, which is how it is viewed in the Spanish and Portuguese-speaking regions of the Americas.</p>
+  </div>
+</div>
+
+<div class="container">
+  <br>
+  <div class="row">
+    <% @africa.each do |continent| %>
+    <br>
+    <div class="col-sm-3">
+      <div class="card text-center">
+        <img src="https://qvcc.edu/wp-content/uploads/2016/11/waterfalls-south-america-falls-columbia-tequendma-wallpaper-3d-download-1600x1080.jpg" class="card-img-top" alt="South American Waterfall">
+        <div class="card-body">
+          <h5 class="card-title"><%= continent %></h5>
+          <p class="card-text">South America is a continent composed of twelve countries and one French colony. The Spanish-speaking countries are: Argentina, Bolivia, Chile, Colombia, Ecuador, Paraguay, Peru, and Venezuela.</p>
+          <a href="/countries/show" class="btn btn-warning">Show Me More</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

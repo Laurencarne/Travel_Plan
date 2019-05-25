@@ -1,0 +1,25 @@
+
+<div class="container">
+  <div class="jumbotron text-center">
+    <h1 class="display-4">Welcome to Asia</h1>
+    <p class="lead">Asia is the largest and most populous continent in the world, sharing borders with Europe and Africa to its West, Oceania to its South, and North America to its East. Its North helps form part of the Arctic alongside North America and Europe</p>
+  </div>
+</div>
+
+<div class="container">
+  <br>
+  <div class="row">
+    <% @africa.each do |continent| %>
+    <br>
+    <div class="col-sm-3">
+      <div class="card text-center">
+        <img src="https://www.worldatlas.com/upload/images/Taktshang%20Goemba%20-%20Tigers%20Nest%20Monastery.jpg" class="card-img-top" alt="Asian Mountain Side">
+        <div class="card-body">
+          <h5 class="card-title"><%= continent %></h5>
+          <p class="card-text">Asia is the largest and most populous continent in the world, sharing borders with Europe and Africa to its West, Oceania to its South, and North America to its East. </p>
+          <a href="/countries/show" class="btn btn-warning">Show Me More</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
