@@ -5,45 +5,32 @@ class CountriesController < ApplicationController
     @countries = Country.show_only_continents
   end
 
-  def new
-    @country = Country.new
-  end
-
-  def create
-    @country = Country.new(country_params)
-    if @country.valid?
-      @country.save
-      redirect_to country_path(@country)
-    else
-      render :new
-    end
-  end
-
   def show
   end
 
   def africa
-    @africa = Country.sort_by_continent("africa")
+    @africa = Country.selected_continents("Africa")
   end
 
   def asia
-    @africa = Country.sort_by_continent("asia")
+    @asia = Country.selected_continents("Asia")
   end
 
   def europe
-    @africa = Country.sort_by_continent("europe")
+    @europe = Country.selected_continents("Europe")
   end
 
   def south_america
-    @africa = Country.sort_by_continent("south america")
+    @south_america= Country.selected_continents("South America")
   end
 
   def north_america
-    @africa = Country.sort_by_continent("north america")
+    @north_america = Country.selected_continents("North America")
   end
 
-
-
+  def oceania
+    @oceania = Country.selected_continents("Oceania")
+  end
 
   private
 

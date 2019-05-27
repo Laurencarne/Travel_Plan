@@ -1,23 +1,24 @@
-
-<div class="container">
+<!-- Jumbotron style for the heading -->
+<div class="container pt-4">
   <div class="jumbotron text-center">
-    <h1 class="display-4">Welcome to North America</h1>
-    <p class="lead">North America, the planet's 3rd largest continent, includes (23) countries and dozens of possessions and territories. It contains all Caribbean and Central America countries, Bermuda, Canada, Mexico, the United States of America, as well as Greenland - the world's largest island</p>
+    <h1 class="display-4">Welcome To Asia</h1>
+    <p class="lead">A bountiful land of eye-popping landscapes, sprawling cities, and adventure at every turn, North America combines the wonders of nature and man together into an unbeatable package. </p>
   </div>
 </div>
-
+<!-- Each statment to print out a card style box for each continent with image. -->
 <div class="container">
   <br>
   <div class="row">
-    <% @africa.each do |continent| %>
+    <% @north_america.each do |country| %>
     <br>
-    <div class="col-sm-3">
+    <div class="col-sm-3 pt-4">
       <div class="card text-center">
-        <img src="https://wallpaper-gallery.net/images/america-hd-wallpapers/america-hd-wallpapers-2.jpg" class="card-img-top" alt="Golden Gate Bridge">
+        <img src="<%= Country.country_image(country)%>" class="card-img-top" alt="European City">
         <div class="card-body">
-          <h5 class="card-title"><%= continent %></h5>
-          <p class="card-text">North America is one of two continents named after the Italian explorer Amerigo Vespucci, with a surface area of 24,221,490km² (9,351,969 square miles).</p>
-          <a href="/countries/show" class="btn btn-warning">Show Me More</a>
+          <h5 class="card-title"><%= country %></h5>
+          <p class="card-text">These are the lands of plenty, and there’s always enough for seconds (or thirds).</p>
+          <!-- Link to the countries show page -->
+          <a href="/countries/<%=Country.find_by(name: country).id%>" class="btn btn-warning">Show Me More</a>
         </div>
       </div>
     </div>

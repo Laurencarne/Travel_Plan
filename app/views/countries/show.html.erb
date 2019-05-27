@@ -1,0 +1,16 @@
+<!-- Jumbotron style for the heading -->
+<div class="container pt-4">
+  <div class="jumbotron text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1 class="display-4">Welcome To <%= @country.name%></h1>
+          <p class="lead"><%= @country.information%></p>
+        </div>
+        <div class="col-4">
+          <img src="<%= @country.country_image%>" class="rounded mx-auto d-block" alt=""<%= @country.name%> City"">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

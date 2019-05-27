@@ -1,23 +1,24 @@
-
-<div class="container">
+<!-- Jumbotron style for the heading -->
+<div class="container pt-4">
   <div class="jumbotron text-center">
-    <h1 class="display-4">Welcome to Asia</h1>
-    <p class="lead">Asia is the largest and most populous continent in the world, sharing borders with Europe and Africa to its West, Oceania to its South, and North America to its East. Its North helps form part of the Arctic alongside North America and Europe</p>
+    <h1 class="display-4">Welcome To Asia</h1>
+    <p class="lead">Sum up touring Asia in a paragraph? Good luck. Positively massive by just about every measure, the sole thread that unites this diverse continent is the sheer diversity of experiences it presents to travellers.</p>
   </div>
 </div>
-
+<!-- Each statment to print out a card style box for each continent with image. -->
 <div class="container">
   <br>
   <div class="row">
-    <% @africa.each do |continent| %>
+    <% @asia.each do |country| %>
     <br>
-    <div class="col-sm-3">
+    <div class="col-sm-3 pt-4">
       <div class="card text-center">
-        <img src="https://www.worldatlas.com/upload/images/Taktshang%20Goemba%20-%20Tigers%20Nest%20Monastery.jpg" class="card-img-top" alt="Asian Mountain Side">
+        <img src="<%= Country.country_image(country)%>" class="card-img-top" alt="European City">
         <div class="card-body">
-          <h5 class="card-title"><%= continent %></h5>
-          <p class="card-text">Asia is the largest and most populous continent in the world, sharing borders with Europe and Africa to its West, Oceania to its South, and North America to its East. </p>
-          <a href="/countries/show" class="btn btn-warning">Show Me More</a>
+          <h5 class="card-title"><%= country %></h5>
+          <p class="card-text">Asia encompasses all this and so, so, so much more. Don’t expect to absorb it all; dive on in and let it seep into your skin.</p>
+          <!-- Link to the countries show page -->
+          <a href="/countries/<%=Country.find_by(name: country).id%>" class="btn btn-warning">Show Me More</a>
         </div>
       </div>
     </div>
