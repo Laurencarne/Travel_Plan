@@ -32,6 +32,10 @@ class CountriesController < ApplicationController
     @oceania = Country.selected_continents("Oceania")
   end
 
+  def search
+    byebug
+  end
+
   private
 
   def country_params

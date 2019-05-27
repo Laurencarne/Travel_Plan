@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   get "/oceania", to: "countries#oceania", as: "oceania"
   get "/north_america", to: "countries#north_america", as: "north_america"
   get "/south_america", to: "countries#south_america", as: "south_america"
+
+  get "/search", to: "countries#search", as: "search"
 end

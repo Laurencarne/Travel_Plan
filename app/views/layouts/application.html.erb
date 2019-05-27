@@ -31,10 +31,12 @@
           <a class="nav-link" href="/activities">Activities</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+      <div class="form-inline my-2 my-lg-0">
+        <%= form_tag("/search", method: "get", :class => "float-left") do %>
+        <%= text_field_tag(:question, :Search)%>
+        <%= submit_tag("Search") %>
+        <% end %>
+      </div>
     </div>
   </nav>
 
