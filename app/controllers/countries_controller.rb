@@ -33,7 +33,7 @@ class CountriesController < ApplicationController
   end
 
   def search
-    byebug
+    
   end
 
   private
