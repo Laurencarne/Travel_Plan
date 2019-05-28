@@ -361,8 +361,13 @@ Trip.create(name: trip_name.sample, start_date: Faker::Date.between_except(2.yea
 Trip.create(name: trip_name.sample, start_date: Faker::Date.between_except(2.year.ago, 2.year.from_now, Date.today), end_date: Faker::Date.between_except(2.year.ago, 2.year.from_now, Date.today), travel_companions: Faker::Name.name, notes: "Pack light, dont forget sunscreen.", published: false, user_id: 6)
 
 
-TripCountry.create(trip_id: 1, country_id: 1)
+TripCountry.create(trip_id: 1, country_id: 29)
+TripCountry.create(trip_id: 1, country_id: 74)
+TripCountry.create(trip_id: 1, country_id: 99)
 TripCountry.create(trip_id: 2, country_id: 2)
+TripCountry.create(trip_id: 2, country_id: 102)
+TripCountry.create(trip_id: 2, country_id: 22)
+TripCountry.create(trip_id: 2, country_id: 73)
 TripCountry.create(trip_id: 3, country_id: 3)
 TripCountry.create(trip_id: 4, country_id: 4)
 TripCountry.create(trip_id: 5, country_id: 5)

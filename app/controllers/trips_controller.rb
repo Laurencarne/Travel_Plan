@@ -10,16 +10,21 @@ class TripsController < ApplicationController
   end
 
   def create
+    byebug
     @trip = Trip.new(trip_params)
     if @trip.valid?
       @trip.save
       redirect_to trip_path(@trip)
     else
+      byebug
       render :new
     end
   end
 
   def show
+    @countries = Country.all
+    @activities = Activity.all
+    @tripcountry = TripCountry.all
   end
 
   def edit
