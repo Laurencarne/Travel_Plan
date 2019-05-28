@@ -2,8 +2,7 @@ class Country < ApplicationRecord
   has_many :activities
   has_many :trip_countries
   has_many :trips, through: :trip_countries
-  has_many :users, through: :trips
-  has_many :reviews, through: :activities
+  
 
   def self.show_only_continents
     ## Returns and array of continent names
@@ -27,7 +26,7 @@ class Country < ApplicationRecord
   end
 
   def self.search(search)
-    where("name LIKE ?", "%#{search}%") 
+    where("name LIKE ?", "%#{search}%")
   end
 
 end
