@@ -1,0 +1,28 @@
+<!-- Jumbotron style for the heading -->
+<div class="container pt-4">
+  <div class="jumbotron text-center">
+    <h1 class="display-4">Wanderlust</h1>
+    <p class="lead">Quit your job, buy a ticket, get a tan fall in love, never return</p>
+    <img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" class="card-img-top" alt="Man waiting in an airport">
+  </div>
+  <a href="/trips/new" class="btn btn-dark float-right">Plan A New Trip</a>
+</div>
+<!-- Each statment to print out a card style box for each continent with image. -->
+<div class="container">
+  <br>
+  <div class="row">
+    <% @user.trips.each do |trip| %>
+    <br>
+    <div class="col-sm-3 pt-4">
+      <div class="card text-center">
+        <img src="https://images.unsplash.com/photo-1515622472995-1a06094d2224?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjQ0MTA5fQ&auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Suitcase with Camera">
+        <div class="card-body">
+          <h5 class="card-title"><%= trip.name %></h5>
+          <p class="card-text">blah blah blah</p>
+          <!-- Link to the countries show page -->
+          <a href="/trips/<%=trip.id%>" class="btn btn-dark">Proceed to Gate</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

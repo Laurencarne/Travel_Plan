@@ -1,0 +1,52 @@
+<!-- Jumbotron style for the heading -->
+<div class="container pt-4">
+  <div class="jumbotron text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1 class="display-4"><%= @trip.name%></h1>
+          <p class="lead"><%= @trip.start_date.strftime("%B %-d, %Y")%> <i class="fas fa-arrow-right"></i> <%= @trip.end_date.strftime("%B %-d, %Y")%> </p>
+          <% if @trip.travel_companions != nil %>
+            <p class="lead">Travelling with <%= @trip.travel_companions%></p>
+            <% end %>
+        </div>
+        <div class="col-4">
+          <img src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" class="card-img-top" alt="Sunglasses on the sand">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <a href="/trips/new" class="btn btn-dark">Add Another Country</a>
+  <a href="/trips/new" class="btn btn-dark float-right">Add Another Activity</a>
+</div>
+
+<div class="container">
+  <br>
+  <div class="row">
+    <% @trip.countries.each do |country| %>
+    <br>
+    <div class="col-5 pt-5">
+      <div class="card text-center">
+      <img src="<%= country.country_image%>" class="card-img-top" alt="European City">
+        <div class="card-body">
+        <h5 class="card-title"><%= country.name %></h5>
+          <p class="card-text">You're off to great places, today is your day! Your mountain is waiting... So get on your way!.</p>
+          <!-- Link to the countries show page -->
+          <a href="/countries/<%=country.id%>" class="btn btn-warning">Vist <%= country.name %></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-7 text-center">
+      <br>
+      <h1 class="text-dark">Activities: </h1>
+        <% country.activities.each do |activity| %>
+          <%= link_to "#{activity.name}", activity_path(activity), :class => "text-info"%>
+          <br>
+        <% end %>
+    </div>
+    <% end %>
+  </div>
+</div>
