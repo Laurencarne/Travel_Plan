@@ -26,5 +26,8 @@ class Country < ApplicationRecord
     save.map{|country| country.country_image}.join
   end
 
+  def self.search(search)
+    where("name LIKE ?", "%#{search}%") 
+  end
 
 end
