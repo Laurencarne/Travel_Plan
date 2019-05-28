@@ -3,4 +3,5 @@ class User < ApplicationRecord
   has_many :trip_countries, through: :trips
   has_many :countries, through: :trip_countries
   has_many :activities, through: :countries
+  has_many :reviews, through: :activities
 end

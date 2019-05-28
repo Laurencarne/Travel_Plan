@@ -1,4 +1,7 @@
 div {
   font-family: 'Quicksand', sans-serif;
+}
 
+.navbar .navbar-expand-lg .navbar-light {
+  background-color: rgba(0, 0, 0, 1);
 }

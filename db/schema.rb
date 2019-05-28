@@ -10,17 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_27_190234) do
+ActiveRecord::Schema.define(version: 2019_05_28_070431) do
 
   create_table "activities", force: :cascade do |t|
     t.string "name"
     t.integer "price"
     t.text "notes"
-    t.text "review"
-    t.string "photo"
     t.text "tips"
     t.boolean "published"
-    t.integer "rating"
     t.string "street_name"
     t.string "city"
     t.string "zip_code"
@@ -34,13 +31,21 @@ ActiveRecord::Schema.define(version: 2019_05_27_190234) do
     t.text "information"
     t.string "language"
     t.string "flag"
-    t.string "photo"
     t.string "alpha2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "continent"
     t.string "continent_image"
     t.string "country_image"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "review"
+    t.integer "rating"
+    t.string "photo"
+    t.integer "activity_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "trip_countries", force: :cascade do |t|
