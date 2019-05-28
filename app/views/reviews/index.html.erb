@@ -1,0 +1,10 @@
+<div class="container">
+  <br>
+  <h1 class="text-danger">Reviews: </h1>
+  <br>
+  <ul>
+    <% @reviews.each do |review| %>
+    <li><%= link_to "#{review.title} a review about #{review.activity.name}", review_path(review), :class => "text-info"%></li>
+    <% end %>
+  </ul>
+</div>

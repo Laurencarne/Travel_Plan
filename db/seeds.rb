@@ -379,5 +379,5 @@ TripCountry.create(trip_id: 15, country_id: 15)
 TripCountry.create(trip_id: 16, country_id: 16)
 
 200.times do
-  Review.create(review: "Really good and stuff.", rating: rand(10), photo: "http://www.freakingnews.com/pictures/62000/Pirates-of-the-Caribbean-Tourists--62170.jpg", activity_id: Activity.all.sample.id)
+  Review.create(review: "Really good and stuff.", rating: rand(10), photo: "http://www.freakingnews.com/pictures/62000/Pirates-of-the-Caribbean-Tourists--62170.jpg", title: "This is the Title", activity_id: Activity.all.sample.id)
 end
