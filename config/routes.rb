@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :trip_countries
   resources :trips
   resources :users
+  resources :reviews
 
   get "/africa", to: "countries#africa", as: "africa"
   get "/asia", to: "countries#asia", as: "asia"
@@ -13,4 +14,7 @@ Rails.application.routes.draw do
   get "/south_america", to: "countries#south_america", as: "south_america"
 
   get "/search", to: "countries#search", as: "search"
+
+  get "/", to: "users#home", as: "/"
+
 end

@@ -1,6 +1,7 @@
 <div class="container">
   <br>
   <h1 class="text-danger">Activities: </h1>
+ <button type="button" class="btn btn-light"><%= link_to 'Create New Activity', new_activity_path %></button>
   <br>
   <ul>
     <% @activities.each do |activity| %>
