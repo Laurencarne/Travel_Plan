@@ -1,0 +1,2 @@
+class SelectedActivitiesController < ApplicationController
+end
