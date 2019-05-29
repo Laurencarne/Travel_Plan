@@ -16,7 +16,7 @@
         <img src="<%= Country.country_image(country)%>" class="card-img-top" alt="European City">
         <div class="card-body">
           <h5 class="card-title"><%= country %></h5>
-          <p class="card-text">The Old World has stood for centuries, and it’ll all still be here when you’re ready to come back (which, of course, you’ll want to do immediately after getting home.)</p>
+          <p class="card-text"><%= Country.country_information(country)%></p>
           <!-- Link to the countries show page -->
           <a href="/countries/<%=Country.find_by(name: country).id%>" class="btn btn-warning">Show Me More</a>
         </div>
