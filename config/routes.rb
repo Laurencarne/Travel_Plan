@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sessions/bundle'
+  get 'sessions/install'
   resources :selected_activities
   resources :activities
   resources :countries
@@ -17,5 +19,7 @@ Rails.application.routes.draw do
   get "/search", to: "countries#search", as: "search"
 
   get "/", to: "users#home", as: "/"
-
+  get "signup", to: "users#new", as: "signup"
+  get "login", to: "sessions#new", as: "login"
+  post "sessions", to: "sessions#create", as: "sessions"
 end

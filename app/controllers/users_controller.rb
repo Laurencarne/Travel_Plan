@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :authorized
+  skip_before_action :authorized, only: [:new, :create, :home]
+
 
   def home
     @reviews = Review.sort_highest
@@ -17,6 +20,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.valid?
       @user.save
+      session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
       render :new
@@ -45,7 +49,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :first_name, :last_name, :password)
+    params.require(:user).permit(:name, :first_name, :last_name, :password)
   end
 
   def set_user

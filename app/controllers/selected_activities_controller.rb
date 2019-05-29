@@ -1,5 +1,6 @@
 class SelectedActivitiesController < ApplicationController
   before_action :set_selected_activity, only: [:show, :edit, :update, :destroy]
+  before_action :authorized
 
   def index
     @selected_activities = SelectedActivity.all

@@ -1,18 +1,18 @@
 require 'Faker'
 
-User.create(name: "lauren732", email: "oreocookie@hotmail.co.uk", encrypted_password: "laurenspassword", first_name: "Lauren", last_name: "Carne")
-User.create(name: "lovebug23", email: "lovebug23@gmail.com", encrypted_password: "lovebug123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
-User.create(name: "scoobydoo42", email: "scoobydoo42@gmail.com", encrypted_password: "scoobydoo123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
-User.create(name: "dollyduckgirl", email: "dollyduckgirl@gmail.com", encrypted_password: "dollyduckgirl123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
-User.create(name: "travelqueen", email: "travelqueen@gmail.com", encrypted_password: "travelqueen123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
-User.create(name: "nomad782", email: "nomad782@gmail.com", encrypted_password: "nomad123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
-User.create(name: "pineappledancer", email: "pineappledancer@gmail.com", encrypted_password: "pineappledancer123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
-User.create(name: "bumblebee33", email: "bumblebee33@gmail.com", encrypted_password: "bumblebee123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
-User.create(name: "ijustine", email: "ijustine@gmail.com", encrypted_password: "ijustine123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
-User.create(name: "goldenchild99", email: "goldenchild99@gmail.com", encrypted_password: "goldenchild123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
+User.create(name: "lauren732",  password: "laurenspassword", first_name: "Lauren", last_name: "Carne")
+User.create(name: "lovebug23",  password: "lovebug123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
+User.create(name: "scoobydoo42",  password: "scoobydoo123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
+User.create(name: "dollyduckgirl",  password: "dollyduckgirl123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
+User.create(name: "travelqueen",  password: "travelqueen123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
+User.create(name: "nomad782", password: "nomad123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
+User.create(name: "pineappledancer",  password: "pineappledancer123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
+User.create(name: "bumblebee33",  password: "bumblebee123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
+User.create(name: "ijustine",  password: "ijustine123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
+User.create(name: "goldenchild99",  password: "goldenchild123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
 
 # This is to auto seed the flag images from the flag folder.
-# Need some guidence
+# Need some guidencex§
 # def seed_image(file_name)
 #   File.open(File.join(Rails.root, ".flags/128x128/#{file_name}.png"))
 # end

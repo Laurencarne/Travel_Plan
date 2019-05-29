@@ -1,5 +1,6 @@
 class TripCountriesController < ApplicationController
   before_action :set_trip_country, only: [:show, :edit, :update, :destroy]
+  before_action :authorized
 
   def index
     @trip_countries = TripCountry.all
