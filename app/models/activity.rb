@@ -1,6 +1,7 @@
 class Activity < ApplicationRecord
   belongs_to :country
   has_many :selected_activities
+  has_many :reviews
   has_many :trip_countries, through: :selected_activities
   has_many :trips, through: :trip_countries
 

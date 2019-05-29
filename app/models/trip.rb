@@ -6,4 +6,5 @@ class Trip < ApplicationRecord
 
 
 
+
 end

@@ -11,9 +11,47 @@
   <h5 class="text-info"><%= @activity.notes %></h5>
   <br>
 
+<<<<<<< HEAD
 
   <div class="custom-control custom-switch">
   <input type="checkbox" class="custom-control-input" id="customSwitch1">
   <label class="custom-control-label" for="customSwitch1">Publish</label>
 </div>
+=======
+  <% if @activity.reviews == nil %>
+    <h4 class="text-warning">"Be the first to leave a review!"</h4>
+    <% else %>
+      <% @reviews.each do |review| %>
+        <h2 class="text-warning">Reviews: </h2>
+        <div class="card text-center my-4">
+        <div class="card-header text-center text-muted">
+          <%= review.title %>
+        </div>
+          <div class="card-body">
+            <p class="card-text"><%= review.review%></p>
+            <p class="card-text">
+            <% if review.rating == 0 %>
+              <i class="far fa-angry"></i>
+            <% elsif review.rating == nil %>
+              <i class="fas fa-question"></i>
+            <% elsif review.rating == 1 %>
+              <i class="fas fa-star text-warning"></i>
+            <% elsif review.rating == 2 %>
+              <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+            <% elsif review.rating == 3 %>
+              <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+            <% elsif review.rating == 4 %>
+              <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+            <% elsif review.rating == 5 %>
+              <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+            <%end%>
+            </p>
+          </div>
+          <div class="card-footer text-muted">
+            This will be the user name when we have a new model set up
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+>>>>>>> 4d0a7e99627bb1458d2d739173995194602dad2a
 </div>

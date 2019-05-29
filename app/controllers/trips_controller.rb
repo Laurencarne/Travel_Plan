@@ -20,9 +20,13 @@ class TripsController < ApplicationController
   end
 
   def show
-    @countries = Country.all
-    @activities = Activity.all
+    @countries = @trip.countries
+    @page_hash = {}
+    @countries.each{|country| @page_hash[country.name] = []}
+    @trip.selected_activities.each{|sa| @page_hash[sa.trip_country.country.name] << sa.activity}
     @trip_country = TripCountry.new
+    @selected_activity = SelectedActivity.new
+
   end
 
   def edit

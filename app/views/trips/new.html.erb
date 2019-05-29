@@ -9,30 +9,40 @@
     <% end %>
     </ul>
     </div>
-    <% end %>
+  <% end %>
   <br>
   <h1 class="text-success">Plan a New Trip: </h1>
-    <div class="text-danger">
+    <div class="form-row">
+      <div class="form-group col-md-6">
       <%= form_for @trip do |f| %>
       <%= f.hidden_field :user_id, value: @trip.user_id %>
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-      <br>
-      <%= f.label :start_date%>
-      <%= f.date_field(:start_date) %>
-      <br>
-      <%= f.label :end_date%>
-      <%= f.date_field(:end_date) %>
-      <br>
-      <%= f.label :travel_companions %>
-      <%= f.text_field :travel_companions %>
-      <br>
-      <%= f.label :notes %>
-      <%= f.text_area :notes %>
-      <br>
-      <%= f.label "Country" %>
-      <%= f.collection_select(:country_ids, Country.all, :id, :name) %>
-      <br>
+      <%= f.text_field :name, :class => "form-control", :placeholder => "Trip Name" %>
+      </div>
+      <div class="form-group col-md-6">
+      <%= f.text_field :travel_companions, :class => "form-control", :placeholder => "Travel Companions" %>
+      </div>
+      <div class="form-group col-md-6">
+      <%= f.label "Starts"%>
+      <%= f.date_field :start_date, :class => "form-control"%>
+      </div>
+      <div class="form-group col-md-6">
+      <%= f.label "Ends"%>
+      <%= f.date_field :end_date, :class => "form-control"%>
+      </div>
+      <div class="form-group col-md-6">
+        <div class="input-group mb-4">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Country</label>
+          </div>
+          <%= f.collection_select :country_ids, Country.all, :id, :name, :class => "form-control" %>
+        </div>
+      </div>
+      <div class="form-group col-md-6">
+      <%= f.text_area :notes, :class => "form-control", :placeholder => "Notes" %>
+      </div>
+      <div class="form-group col-md-6">
       <%=  f.submit class: "btn btn-info" %>
       <% end %>
+      </div>
     </div>
+</div>
