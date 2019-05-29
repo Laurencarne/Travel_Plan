@@ -9,6 +9,7 @@
         </div>
         <div class="col-4">
           <img src="<%= @country.country_image%>" class="img-fluid rounded mx-auto d-block" alt="<%= @country.name%> City">
+          <button type="button" class="btn btn-outline-dark"><%= link_to 'Or Create New Activity', new_activity_path, :class => "text-dark" %></button>
         </div>
       </div>
     </div>

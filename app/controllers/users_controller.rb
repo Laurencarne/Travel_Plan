@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-  def home 
-
+  def home
+    @reviews = Review.sort_highest
+    @top_countries = Review.top_countries
   end
-  
+
   def index
   end
 
