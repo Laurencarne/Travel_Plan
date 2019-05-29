@@ -18,6 +18,10 @@ class Country < ApplicationRecord
     Country.all.select{|country| country.continent.downcase == continent_name.downcase}.map{|a| a.continent_info}.uniq.join
   end
 
+  def self.country_information(country_name)
+    Country.all.select{|country| country.name.downcase == country_name.downcase}.map{|a| a.continent_info}.uniq.join
+  end
+
   def self.selected_continents(continent_name)
     ## Returns an array of country names from selected continent
     Country.all.select{|country| country.continent == continent_name}.map{|ind_country| ind_country.name}.uniq
