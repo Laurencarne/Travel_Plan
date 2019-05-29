@@ -1,6 +1,7 @@
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
   before_action :authorized
+  skip_before_action :authorized, only: [:index, :show]
 
   def index
     @activities = Activity.all
@@ -21,7 +22,7 @@ class ActivitiesController < ApplicationController
   end
 
   def show
-   
+    @reviews = Review.find_by(activity_id: @activity)
   end
 
   def edit

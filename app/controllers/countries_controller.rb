@@ -1,6 +1,5 @@
 class CountriesController < ApplicationController
-  before_action :set_country, only: [:show, :edit, :update, :destroy]
-  before_action :authorized
+  before_action :set_country, only: [:show]
 
   def index
     @countries = Country.show_only_continents

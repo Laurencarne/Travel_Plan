@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get 'sessions/install'
   resources :selected_activities
   resources :activities
-  resources :countries
+  resources :countries, only: [:index, :show]
   resources :trip_countries
   resources :trips
   resources :users
@@ -15,7 +15,6 @@ Rails.application.routes.draw do
   get "/oceania", to: "countries#oceania", as: "oceania"
   get "/north_america", to: "countries#north_america", as: "north_america"
   get "/south_america", to: "countries#south_america", as: "south_america"
-
   get "/search", to: "countries#search", as: "search"
 
   get "/", to: "users#home", as: "/"
