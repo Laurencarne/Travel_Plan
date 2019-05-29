@@ -22,7 +22,7 @@ class ActivitiesController < ApplicationController
   end
 
   def show
-    @reviews = Review.find_by(activity_id: @activity)
+    @reviews = @activity.reviews
   end
 
   def edit
