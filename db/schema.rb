@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_28_135323) do
+ActiveRecord::Schema.define(version: 2019_05_29_071506) do
 
   create_table "activities", force: :cascade do |t|
     t.string "name"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2019_05_28_135323) do
     t.string "continent"
     t.string "continent_image"
     t.string "country_image"
+    t.text "continent_info"
   end
 
   create_table "reviews", force: :cascade do |t|
