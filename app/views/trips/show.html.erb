@@ -49,10 +49,10 @@
     <div class="col-7 text-center">
       <br>
       <h1 class="text-dark">Activities: </h1>
-        <% @trip.selected_activities.each do |activity| %>
+        <% @trip.selected_activities.each {|activity| activity.country_id == @trip.trip_country.country_id }%>
           <%= link_to "#{activity.activity.name}", activity_path(activity), :class => "text-info"%>
           <br>
-        <% end %>
+        
     </div>
     <% end %>
   </div>
