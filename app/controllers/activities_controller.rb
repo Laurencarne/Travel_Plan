@@ -20,7 +20,7 @@ class ActivitiesController < ApplicationController
   end
 
   def show
-    @reviews = @activity.reviews
+   
   end
 
   def edit
