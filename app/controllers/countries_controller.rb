@@ -6,6 +6,7 @@ class CountriesController < ApplicationController
   end
 
   def show
+    @trip_country = TripCountry.new
   end
 
   def africa
