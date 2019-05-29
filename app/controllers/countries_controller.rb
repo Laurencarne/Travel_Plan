@@ -10,6 +10,7 @@ class CountriesController < ApplicationController
 
   def africa
     @africa = Country.selected_continents("Africa")
+
   end
 
   def asia
