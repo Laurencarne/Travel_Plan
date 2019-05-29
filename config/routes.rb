@@ -17,8 +17,9 @@ Rails.application.routes.draw do
   get "/south_america", to: "countries#south_america", as: "south_america"
   get "/search", to: "countries#search", as: "search"
 
-  get "/", to: "users#home", as: "/"
+  get "/", to: "users#home", as: "home"
   get "signup", to: "users#new", as: "signup"
   get "login", to: "sessions#new", as: "login"
   post "sessions", to: "sessions#create", as: "sessions"
+  delete "sessions", to: "sessions#destroy"
 end

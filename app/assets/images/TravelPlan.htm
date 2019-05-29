@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!-- saved from url=(0027)http://localhost:3000/login -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>TravelPlan</title>
+  <meta name="csrf-param" content="authenticity_token">
+<meta name="csrf-token" content="cit4+Q7UX4Hox0tTvz1eY23TuKwcxW/0BpopgWigoY5iJ0JTNMUE2TsAUfP9A/9l7qMUGU791QblBJ782BU6eg==">
+  
+
+  <link rel="stylesheet" media="all" href="./TravelPlan_files/application.self-9607823b249a256f388e79007436d46e38fc9373e9c0b1282df8da4ccafb862a.css" data-turbolinks-track="reload">
+  <script src="./TravelPlan_files/rails-ujs.self-2b8935521e2301b06b45bd42e623eb0c0acf76c3a6ba383b7429c6a2884f8c23.js" data-turbolinks-track="reload"></script>
+<script src="./TravelPlan_files/activestorage.self-1ed4604ac2170045f1ffca4edb81a75246661555e4f9cf682bb8a21825e32e1c.js" data-turbolinks-track="reload"></script>
+<script src="./TravelPlan_files/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js" data-turbolinks-track="reload"></script>
+<script src="./TravelPlan_files/activities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js" data-turbolinks-track="reload"></script>
+<script src="./TravelPlan_files/action_cable.self-69fddfcddf4fdef9828648f9330d6ce108b93b82b0b8d3affffc59a114853451.js" data-turbolinks-track="reload"></script>
+<script src="./TravelPlan_files/cable.self-8484513823f404ed0c0f039f75243bfdede7af7919dda65f2e66391252443ce9.js" data-turbolinks-track="reload"></script>
+<script src="./TravelPlan_files/countries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js" data-turbolinks-track="reload"></script>
+<script src="./TravelPlan_files/selected_activities.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js" data-turbolinks-track="reload"></script>
+<script src="./TravelPlan_files/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js" data-turbolinks-track="reload"></script>
+<script src="./TravelPlan_files/trip_countries.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js" data-turbolinks-track="reload"></script>
+<script src="./TravelPlan_files/trips.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js" data-turbolinks-track="reload"></script>
+<script src="./TravelPlan_files/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js" data-turbolinks-track="reload"></script>
+<script src="./TravelPlan_files/application.self-66347cf0a4cb1f26f76868b4697a9eee457c8c3a6da80c6fdd76ff77e911715e.js" data-turbolinks-track="reload"></script>
+  <link rel="stylesheet" href="./TravelPlan_files/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="./TravelPlan_files/css" rel="stylesheet">
+  <link rel="stylesheet" href="./TravelPlan_files/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="http://localhost:3000/countries"><i class="fas fa-globe-americas"></i></a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="http://localhost:3000/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:3000/countries">Countries</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:3000/activities">Activities</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:3000/trips">My Trips</a>
+        </li>
+      </ul>
+      <div class="form-inline my-2 my-lg-0">
+        <form class="float-left" action="http://localhost:3000/search" accept-charset="UTF-8" method="get"><input name="utf8" type="hidden" value="✓">
+        <input type="text" name="search" id="search" placeholder="Search Countries">
+        <input type="submit" value="Search" data-disable-with="Search">
+</form>      </div>
+    </div>
+  </nav>
+
+
+
+  <div class="container login_page p-auto">
+    <div class="row">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="form-login"><br>
+          <h4>Login</h4>
+          <br>
+          <div class="form-group col-md-6">
+            <form action="http://localhost:3000/sessions" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="cit4+Q7UX4Hox0tTvz1eY23TuKwcxW/0BpopgWigoY5iJ0JTNMUE2TsAUfP9A/9l7qMUGU791QblBJ782BU6eg==">
+            <input type="text" name="name" id="name" value="{:class=&gt;&quot;form-group col-md-6&quot;, :placeholder=&gt;&quot;username&quot;}">
+          </form></div>
+          <div class="form-group col-md-6">
+            <input type="password" name="password" id="password" value="{:class=&gt;&quot;form-group col-md-6&quot;, :placeholder=&gt;&quot;Password&quot;}">
+          </div>
+          <div class="form-group col-md-6">
+            <input type="submit" name="commit" value="Sign In" class="btn btn-info" data-disable-with="Sign In">
+          </div>
+          <br>
+          <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username">
+          <br><br>
+          <input type="text" id="userPassword" class="form-control input-sm chat-input" placeholder="password">
+          <br><br>
+          <div class="wrapper">
+                <span class="group-btn">
+                  <a href="http://localhost:3000/login#" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></a>
+                </span>
+              </div>
+          </div>
+      </div>
+    </div>
+    <br><br><br>
+    <!--footer-->
+    <div class="footer text-dark text-center">
+        <p>© 2019 Flatiron School - London. All rights reserved | Design by Lauren and Amari</p>
+    </div>
+</div>
+
+
+
+<form action="http://localhost:3000/sessions" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="cit4+Q7UX4Hox0tTvz1eY23TuKwcxW/0BpopgWigoY5iJ0JTNMUE2TsAUfP9A/9l7qMUGU791QblBJ782BU6eg==">
+  <label for="Name">Name</label>
+  <input type="text" name="name" id="name">
+  <label for="Password">Password</label>
+  <input type="password" name="password" id="password">
+  <input type="submit" name="commit" value="Sign In" data-disable-with="Sign In">
+</form>
+
+
+</body></html>
