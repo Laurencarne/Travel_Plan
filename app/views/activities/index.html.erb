@@ -1,11 +1,27 @@
+<!-- Jumbotron style for the heading -->
+<div class="container pt-4">
+  <div class="jumbotron text-center">
+    <h1 class="display-4">The World is Your Oyster</h1>
+    <p class="lead">Explore the activities for inspiration</p>
+    <button type="button" class="btn btn-outline-dark"><%= link_to 'Or Create New Activity', new_activity_path, :class => "text-dark" %></button>
+  </div>
+</div>
+<!-- Each statment to print out a card style box for each continent with image. -->
 <div class="container">
   <br>
-  <h1 class="text-danger">Activities: </h1>
- <button type="button" class="btn btn-light"><%= link_to 'Create New Activity', new_activity_path %></button>
-  <br>
-  <ul>
+  <div class="row">
     <% @activities.each do |activity| %>
-    <li><%= link_to "#{activity.name} in #{activity.country.name}", activity_path(activity), :class => "text-info"%></li>
-    <% end %>
-  </ul>
+    <br>
+    <div class="col-sm-3 pt-4">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title"><%= activity.name %></h5>
+          <p class="card-text"><%= activity.notes %></p>
+          <!-- Link to the countries show page -->
+          <%= link_to "Read More...", activity_path(activity), :class => "btn btn-dark"%>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
 </div>

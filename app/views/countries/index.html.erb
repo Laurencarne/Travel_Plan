@@ -16,7 +16,7 @@
         <img src="<%= Country.continent_image(country)%>" class="card-img-top" alt="European City">
         <div class="card-body">
           <h5 class="card-title"><%= country %></h5>
-          <p class="card-text">blah blah blah</p>
+          <p class="card-text"><%= Country.continent_information(country)%></p>
           <!-- Link to the countries show page -->
           <a href="/<%=country.downcase.tr(" ", "_")%>" class="btn btn-warning">Show Me More</a>
         </div>
