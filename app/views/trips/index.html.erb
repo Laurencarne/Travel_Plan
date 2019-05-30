@@ -1,14 +1,21 @@
 <!-- Jumbotron style for the heading -->
 <div class="container pt-4">
-  <div class="jumbotron text-center">
-    <h1 class="display-4">Wanderlust</h1>
-    <p class="lead">Quit your job, buy a ticket, get a tan fall in love, never return</p>
-    <img src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" class="card-img-top" alt="Man waiting in an airport">
-  </div>
+  <img src="images/airport.jpeg" class="card-img-top rounded" alt="Sunglasses on the sand">
 </div>
-<!-- Each statment to print out a card style box for each continent with image. -->
+
+  <div class="container">
+    <div class="">
+      <h1 class="display-4">Wanderlust</h1>
+      <p class="lead">Quit your job, buy a ticket, get a tan fall in love, never return</p>
+    </div>
+
+
+    <div class="float-right">
+      <button type="button" class="btn btn-outline-dark"><%= link_to 'Reviews', reviews_path, :class => "text-dark" %></button>
+    </div>
+  </div>
+
 <div class="container">
-  <br>
   <div class="row">
     <% @trips.each do |trip| %>
     <br>
@@ -23,5 +30,6 @@
         </div>
       </div>
     </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
