@@ -15,4 +15,22 @@ class Activity < ApplicationRecord
   def self.activities_for_country(country_name)
     self.all.select{|activity| activity.country.name == country_name}
   end
+
+  def activity_review_length
+      self.reviews.length
+  end
+
+  def activity_review_sum
+      all_ratings = self.reviews.map { |review| review.rating }.sum
+      
+  end
+
+  def average_rating
+    if self.activity_review_sum == 0 || self.activity_review_length == 0
+        "Awaiting Reviews"
+    else
+      average = self.activity_review_sum / self.activity_review_length
+    end
+  end
+
 end
