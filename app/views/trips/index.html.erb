@@ -12,12 +12,12 @@
   <div class="row">
     <% @trips.each do |trip| %>
     <br>
-    <div class="col-sm-3 pt-4">
+    <div class="col-sm-3 py-4">
       <div class="card text-center">
         <img src="https://images.unsplash.com/photo-1515622472995-1a06094d2224?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjQ0MTA5fQ&auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Suitcase with Camera">
         <div class="card-body">
           <h5 class="card-title"><%= trip.name %></h5>
-          <p class="card-text">blah blah blah</p>
+          <p class="card-text"><%= trip.start_date.strftime("%B %-d, %Y")%></p>
           <!-- Link to the countries show page -->
           <a href="/trips/<%=trip.id%>" class="btn btn-dark">Proceed to Gate</a>
         </div>

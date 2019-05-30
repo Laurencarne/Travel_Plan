@@ -8,4 +8,8 @@ class Activity < ApplicationRecord
   def self.activities_per_country(country_id)
     self.all.select{|activity| activity.country_id == country_id}
   end
+
+  def self.activities_for_country(country_name)
+    self.all.select{|activity| activity.country.name == country_name}
+  end
 end

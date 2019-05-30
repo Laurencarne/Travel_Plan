@@ -50,11 +50,9 @@
 <div class="col-5 pb-4 pt-0 float-right">
   <h1 class="text-center text-dark"><i class="fas fa-award text-warning"></i> Top Destinations</h1>
   <%@counter = 1%>
-  <br>
     <% @top_countries.each do |top_country| %>
     <% @country = Country.find(top_country) %>
-    <br>
-      <div class="card text-center">
+      <div class="card text-center mt-3">
         <img src="<%= Country.country_image(@country.name)%>" class="card-img-top" alt="European City">
         <div class="card-body">
           <h5 class="card-title"><%= @counter.ordinalize %> Place <i class="fas fa-medal text-danger"></i></h5>

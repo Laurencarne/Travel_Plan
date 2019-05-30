@@ -50,7 +50,7 @@
           <%= form_for @selected_activity do |f| %>
           <% @tripid = TripCountry.find_by(trip_id: @trip.id, country_id: @countries.find{|c| c.name == country}.id)%>
           <%= f.hidden_field :trip_country_id, value: @tripid.id %>
-          <%= f.collection_select(:activity_id, Activity.all, :id, :name) %>
+          <%= f.collection_select(:activity_id, Activity.activities_for_country(country), :id, :name) %>
           <%= f.submit "Add An Activity" %>
           <% end %>
         </div>
