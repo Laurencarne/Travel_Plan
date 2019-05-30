@@ -1,54 +1,87 @@
+<!-- Jumbotron style for the heading -->
+<div class="container pt-4">
+  <div class="jumbotron text-center">
+    <h1 class="display-4"><%= @activity.name %></h1>
+    <p class="lead">- In <%= @activity.country.name %></p>
+  </div>
+</div>
+
+
+
 <div class="container">
-  <br>
-  <h2 class="text-warning">Activity: </h2>
-  <h5 class="text-info">Name: <%= @activity.name %></h5>
-  <h5 class="text-info">Price: £<%= @activity.price%></h5>
-  <h2 class="text-warning">Address: </h2>
-  <h5 class="text-info"><%= @activity.street_name %></h5>
-  <h5 class="text-info"><%= @activity.city %></h5>
-  <h5 class="text-info"><%= @activity.zip_code %></h5>
-  <h2 class="text-warning">Description: </h2>
-  <h5 class="text-info"><%= @activity.notes %></h5>
-  <br>
-
-<h2 class="text-warning">Reviews: </h2>
-
-  <% @reviews.each do |review| %>
-    <div class="card text-center my-4">
-    <div class="card-header text-left text-muted d-flex justify-content-between">
-      <span class="font-italic"> Written on <%= review.created_at.strftime("%B %-d, %Y") %></span>
-      <%= review.user.name %>
+  <div class="row">
+    <div class="col-sm-6">
+      <h2 class="text-warning"> Description: </h2>
+      <h3 class="text-muted"><%= @activity.notes%></h3>
     </div>
-      <div class="card-body">
-        <p class="card-text"><%= review.title %></p>
-        <p class="card-text"><%= review.review%></p>
-        <p class="card-text">
-        <% if review.rating == 0 %>
-          <i class="far fa-angry"></i>
-        <% elsif review.rating == nil %>
-          <i class="fas fa-question"></i>
-        <% elsif review.rating == 1 %>
-          <i class="fas fa-star text-warning"></i>
-        <% elsif review.rating == 2 %>
-          <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
-        <% elsif review.rating == 3 %>
-          <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
-        <% elsif review.rating == 4 %>
-          <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
-        <% elsif review.rating == 5 %>
-          <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
-        <%end%>
-        </p>
-      </div>
-
-      <div class="card-footer text-muted d-flex justify-content-between">
-        <%= review.likes.count %> Likes
-        <%= form_tag likes_path, method: 'post' do %>
-        <%= hidden_field_tag "activity_id", @activity.id %>
-        <%= hidden_field_tag "like[review_id]", review.id %>
-        <button type="button" class="btn btn-outline-secondary"<%= submit_tag "" %><i class="far fa-heart text-danger"></i></button>
-        <% end %>
-      </div>
+    <div class="col-sm-3">
     </div>
+    <div class="col-sm-3">
+      <h5 class="card-title text-right"> Address: </h5>
+      <p class="card-text text-right text-muted">
+      <%= @activity.street_name%> <br>
+      <%= @activity.city%> <br>
+      <%= @activity.zip_code%>
+      <br>
+      <p class="card-text text-right text-muted"> Price: £<%= @activity.price%> </p>
+      <p class="card-text text-right text-muted"> Average Rating Score: <br><%= @activity.average_rating %> </p>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="container">
+<%  if @activity.reviews.length >= 1 %>
+  <h2 class="text-warning">Reviews: </h2>
+
+    <% @reviews.each do |review| %>
+      <div class="card text-center my-4">
+      <div class="card-header text-left text-muted d-flex justify-content-between">
+        <span class="font-italic"> Written on <%= review.created_at.strftime("%B %-d, %Y") %></span>
+        <%= review.user.name %>
+      </div>
+        <div class="card-body">
+          <p class="card-text"><%= review.title %></p>
+          <p class="card-text"><%= review.review%></p>
+          <p class="card-text">
+          <% if review.rating == 0 %>
+            <i class="far fa-angry"></i>
+          <% elsif review.rating == nil %>
+            <i class="fas fa-question"></i>
+          <% elsif review.rating == 1 %>
+            <i class="fas fa-star text-warning"></i>
+          <% elsif review.rating == 2 %>
+            <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+          <% elsif review.rating == 3 %>
+            <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+          <% elsif review.rating == 4 %>
+            <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+          <% elsif review.rating == 5 %>
+            <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+          <%end%>
+          </p>
+        </div>
+        <div class="card-footer text-muted d-flex justify-content-between">
+          <%= review.likes.count %> Likes
+          <%= form_tag likes_path, method: 'post' do %>
+          <%= hidden_field_tag "activity_id", @activity.id %>
+          <%= hidden_field_tag "like[review_id]", review.id %>
+          <%= button_tag type: 'submit', class: "btn btn-outline-secondary", id: "register-button" do %>
+        <i class="far fa-heart text-danger" aria-hidden="true"></i>
+    <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    <% else %>
+    <h3 class="text-secondary"><i class="fas fa-search-location text-info"></i> No Reviews Yet...</h3>
   <% end %>
 </div>

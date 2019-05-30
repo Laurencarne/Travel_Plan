@@ -50,7 +50,7 @@ class CountriesController < ApplicationController
   private
 
   def country_params
-    params.require(:country).permit(:name, :informaiton, :language, :flag, :photo, :alpha2)
+    params.require(:country).permit(:name, :informaiton, :language, :photo, :alpha2)
   end
 
   def set_country

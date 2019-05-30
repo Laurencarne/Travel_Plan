@@ -1,5 +1,5 @@
 class TripCountriesController < ApplicationController
-  before_action :set_trip_country, only: [:show, :edit, :update, :destroy]
+  before_action :set_trip_country, only: [:show, :edit, :update]
   before_action :authorized
 
   def index
@@ -28,20 +28,16 @@ class TripCountriesController < ApplicationController
 
   def update
     if @trip_country.update(country_params)
-      redirect_to trip_country_path(@trip_country)
+      redirect_to trip_path(@trip_country.trip_id)
     else
       render :edit
     end
   end
 
-  def destroy
-    @trip_country.destroy
-    redirect_to trip_countries_path
-  end
-
   private
 
   def trip_country_params
+    byebug
     params.require(:trip_country).permit(:country_id, :trip_id)
   end
 

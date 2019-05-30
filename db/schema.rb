@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_30_143310) do
+ActiveRecord::Schema.define(version: 2019_05_30_204339) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,21 +19,19 @@ ActiveRecord::Schema.define(version: 2019_05_30_143310) do
     t.string "name"
     t.integer "price"
     t.text "notes"
-    t.text "tips"
-    t.boolean "published"
     t.string "street_name"
     t.string "city"
     t.string "zip_code"
     t.integer "country_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
   end
 
   create_table "countries", force: :cascade do |t|
     t.string "name"
     t.text "information"
     t.string "language"
-    t.string "flag"
     t.string "alpha2"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -79,7 +77,6 @@ ActiveRecord::Schema.define(version: 2019_05_30_143310) do
     t.datetime "start_date"
     t.datetime "end_date"
     t.string "travel_companions"
-    t.boolean "published"
     t.text "notes"
     t.integer "user_id"
     t.datetime "created_at", null: false
