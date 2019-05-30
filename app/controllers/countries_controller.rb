@@ -47,7 +47,6 @@ class CountriesController < ApplicationController
       end
     end
 
-
   private
 
   def country_params
