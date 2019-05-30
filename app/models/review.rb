@@ -12,5 +12,4 @@ class Review < ApplicationRecord
     tc.inject(Hash.new(0)) { |country_id, count| country_id[count] += 1; country_id}.max_by(3){|country_id,count| count; count}.map { |arr| arr[0]}
   end
 
-
 end
