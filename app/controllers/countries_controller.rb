@@ -7,6 +7,11 @@ class CountriesController < ApplicationController
 
   def show
     @trip_country = TripCountry.new
+    if logged_in?
+      @trips = current_user.trips
+    else
+      authorized
+    end
   end
 
   def africa
