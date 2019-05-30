@@ -23,6 +23,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_path(@user)
     else
+      flash[:errors] = ["Please ensure: name is unique & first/last name do not contain numbers or symbols"]
       render :new
     end
   end

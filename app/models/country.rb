@@ -4,6 +4,7 @@ class Country < ApplicationRecord
   has_many :trips, through: :trip_countries
 
 
+
   def self.show_only_continents
     ## Returns and array of continent names
     Country.all.map{|country| country.continent}.uniq
@@ -36,5 +37,7 @@ class Country < ApplicationRecord
   def self.search(search)
     where("name LIKE ?", "%#{search}%")
   end
+
+
 
 end

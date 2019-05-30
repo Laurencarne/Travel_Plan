@@ -7,8 +7,8 @@ class User < ApplicationRecord
   has_many :activities, through: :selected_activities
 
   validates :name, uniqueness: true
-  validates :first_name, presence: true
-  validates :last_name, presence: true
+  validates :first_name, presence: true, format: { with: /\A[a-zA-Z'-]*\z/}
+  validates :last_name, presence: true, format: { with: /\A[a-zA-Z'-]*\z/}
   validates :password, presence: true
 
   validates :first_name, length: {minimum: 2}
