@@ -25,6 +25,8 @@ class ActivitiesController < ApplicationController
   def show
     @reviews = @activity.reviews
     @like = Like.new
+    @review = Review.new
+    @user = current_user.id
   end
 
   def edit
@@ -47,7 +49,7 @@ class ActivitiesController < ApplicationController
   private
 
   def activity_params
-    params.require(:activity).permit(:name, :price, :notes, :review, :photo, :tips, :published, :rating, :street_name, :city, :zip_code, :country_id)
+    params.require(:activity).permit(:name, :price, :notes, :street_name, :city, :zip_code, :country_id, :image)
   end
 
   def set_activity
