@@ -1,5 +1,6 @@
 class Review < ApplicationRecord
   belongs_to :activity
+  belongs_to :user
 
   def self.sort_highest
     self.all.sort_by{|review| review.rating}.reverse[0 ... 10]
