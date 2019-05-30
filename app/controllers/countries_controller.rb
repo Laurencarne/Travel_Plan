@@ -41,11 +41,11 @@ class CountriesController < ApplicationController
   def search
       @countries = Country.all
       if params[:search]
-        @countries = Country.search(params[:search]).order("created_at DESC")
+        @countries = Country.search(params[:search]).order("created_at ASC")
       else
-        @countries = Country.all.order("created_at DESC")
+        @countries = Country.all.order("created_at ASC")
       end
-  end
+    end
 
 
   private
