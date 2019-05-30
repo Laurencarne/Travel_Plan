@@ -4,6 +4,7 @@ class Activity < ApplicationRecord
   has_many :reviews
   has_many :trip_countries, through: :selected_activities
   has_many :trips, through: :trip_countries
+  has_many :users, through: :reviews
 
   def self.activities_per_country(country_id)
     self.all.select{|activity| activity.country_id == country_id}
