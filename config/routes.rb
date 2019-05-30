@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :likes
   get 'sessions/bundle'
   get 'sessions/install'
   resources :selected_activities

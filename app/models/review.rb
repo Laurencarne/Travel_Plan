@@ -1,4 +1,5 @@
 class Review < ApplicationRecord
+  has_many :likes
   belongs_to :activity
   belongs_to :user
 

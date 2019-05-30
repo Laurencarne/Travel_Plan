@@ -390,3 +390,7 @@ end
 100.times do
   SelectedActivity.create(trip_country_id: TripCountry.all.sample.id, activity_id: Activity.all.sample.id)
 end
+
+300.times do
+  Like.create(review_id: User.all.sample.id)
+end
