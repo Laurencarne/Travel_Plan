@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update]
   before_action :authorized
   skip_before_action :authorized, only: [:new, :create, :home]
 
@@ -39,11 +39,6 @@ class UsersController < ApplicationController
     else
       render :edit
     end
-  end
-
-  def destroy
-    @user.destroy
-    redirect_to users_path
   end
 
   private

@@ -57,6 +57,7 @@ div {
   display: inline-block;
   width: auto;
   vertical-align: middle;
+  margin-left: 10px;
 }
 /*
 .search ::placeholder {
