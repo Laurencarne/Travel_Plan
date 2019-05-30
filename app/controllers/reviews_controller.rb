@@ -1,9 +1,11 @@
 class ReviewsController < ApplicationController
-  before_action :set_review, only: [:show, :edit, :update, :destroy]
   before_action :authorized
 
   def index
-    @reviews = Review.all
+    if logged_in?
+      @reviews = current_user.reviews
+    else
+    end
   end
 
   def new
@@ -20,32 +22,11 @@ class ReviewsController < ApplicationController
     end
   end
 
-  def show
-  end
-
-  def edit
-  end
-
-  def update
-    if @review.update(review_params)
-      redirect_to review_path(@review)
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @review.destroy
-    redirect_to reviews_path
-  end
-
   private
 
   def review_params
     params.require(:review).permit(:review, :rating, :photo, :activity_id, :user_id)
+
   end
 
-  def set_review
-    @review = Review.find(params[:id])
-  end
 end
