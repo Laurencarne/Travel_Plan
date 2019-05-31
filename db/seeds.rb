@@ -1,13 +1,6 @@
 User.create(name: "lauren732",  password: "laurenspassword", first_name: "Lauren", last_name: "Carne")
 User.create(name: "lovebug23",  password: "lovebug123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
 User.create(name: "scoobydoo42",  password: "scoobydoo123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
-# User.create(name: "dollyduckgirl",  password: "dollyduckgirl123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
-# User.create(name: "travelqueen",  password: "travelqueen123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
-# User.create(name: "nomad782", password: "nomad123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
-# User.create(name: "pineappledancer",  password: "pineappledancer123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
-# User.create(name: "bumblebee33",  password: "bumblebee123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
-# User.create(name: "ijustine",  password: "ijustine123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
-# User.create(name: "goldenchild99",  password: "goldenchild123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
 
 Country.create(name: "Afghanistan", continent: "Asia", continent_info: "Asia encompasses all this and so, so, so much more. Don’t expect to absorb it all; dive on in and let it seep into your skin.", continent_image: "https://media.gadventures.com/media-server/cache/76/f5/76f5ac4e423593e9d9c2a06a22c166fb.jpg", country_image: "https://www.wildfrontierstravel.com/media/cache/responsive/opengraph-1200/axum/Web%20Images%20-%20Axum-FTP/D-Countries/Afghanistan/Afghanistan-01.jpg", information: "This is some Colorful modern traveler website, colorful website excursion colorful wanderlust design travelblogger. Design fun design travelblogger whimsical traveling. Cute pretty cute modern theme simple fun.")
 Country.create(name: "Albania", continent: "Europe", continent_info: "The Old World has stood for centuries, and it’ll all still be here when you’re ready to come back - which, of course, you’ll want to do immediately after getting home.", continent_image: "https://media.gadventures.com/media-server/cache/86/e4/86e4e19320c95253c18a9022b68540e9.jpg", country_image: "https://www.exodus.co.uk/sites/exod/files/styles/exo_727_421/public/hero-image/hero-image/images/38739_hero.jpg?t=1GbYBM&itok=3atH95xs", information: "This is some Colorful modern traveler website, colorful website excursion colorful wanderlust design travelblogger. Design fun design travelblogger whimsical traveling. Cute pretty cute modern theme simple fun.")
