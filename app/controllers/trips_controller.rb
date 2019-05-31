@@ -1,5 +1,5 @@
 class TripsController < ApplicationController
-  before_action :set_trip, only: [:show, :edit, :update, :destroy]
+  before_action :set_trip, only: [:show]
   before_action :authorized
 
   def index
@@ -31,22 +31,6 @@ class TripsController < ApplicationController
     @trip.selected_activities.each{|sa| @page_hash[sa.trip_country.country.name] << sa.activity}
     @trip_country = TripCountry.new
     @selected_activity = SelectedActivity.new
-  end
-
-  def edit
-  end
-
-  def update
-    if @trip.update(trip_params)
-      redirect_to trip_path(@trip)
-    else
-      render :edit
-    end
-  end
-
-  def destroy
-    @trip.destroy
-    redirect_to trips_path
   end
 
   private

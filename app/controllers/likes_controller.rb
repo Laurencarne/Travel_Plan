@@ -9,7 +9,6 @@ class LikesController < ApplicationController
   end
 
   def create
-    # byebug
     @like = Like.new(like_params)
     if @like.valid?
       @like.save
