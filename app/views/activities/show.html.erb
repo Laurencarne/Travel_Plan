@@ -53,18 +53,19 @@
       </div>
       <% end %>
     <h4 class="text-success">Add a new review: </h4>
+    <%= form_for @review do |f| %>
       <div class="form-row">
-        <%= form_for @review do |f| %>
+
         <div class="form-group col-md-6">
         <%= f.hidden_field :user_id, value: @user %>
         <%= f.hidden_field :activity_id, value: @activity.id %>
-        <%= f.text_field :title, :class => "form-control", :placeholder => "Review Title" %>
+        <%= f.text_field :title, :class => "form-control text-secondary", :placeholder => "Review Title" %>
         </div>
         <div class="form-group col-md-6">
-        <%= f.text_field :rating, :class => "form-control", :placeholder => "Rating - 1 to 5" %>
+        <%= f.text_field :rating, :class => "form-control text-secondary", :placeholder => "Rating - 1 to 5" %>
         </div>
         <div class="form-group col-md-6">
-        <%= f.text_field :review, :class => "form-control", :placeholder => "Review" %>
+        <%= f.text_field :review, :class => "form-control text-secondary", :placeholder => "Review" %>
         </div>
         <div class="form-group col-md-6">
         </div>

@@ -13,8 +13,8 @@
   <br>
   <h1 class="text-success">Plan a New Trip: </h1>
     <div class="form-row">
-      <%= form_for @trip do |f| %>
       <div class="form-group col-md-6">
+        <%= form_for @trip do |f| %>
       <%= f.hidden_field :user_id, value: @trip.user_id %>
       <%= f.text_field :name, :class => "form-control", :placeholder => "Trip Name" %>
       </div>
@@ -23,11 +23,11 @@
       </div>
       <div class="form-group col-md-6">
       <%= f.label "Starts"%>
-      <%= f.date_field :start_date, :class => "form-control"%>
+      <%= f.date_field :start_date%>
       </div>
       <div class="form-group col-md-6">
       <%= f.label "Ends"%>
-      <%= f.date_field :end_date, :class => "form-control"%>
+      <%= f.date_field :end_date%>
       </div>
       <div class="form-group col-md-6">
         <div class="input-group mb-4">
