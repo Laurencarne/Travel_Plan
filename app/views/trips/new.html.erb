@@ -13,8 +13,8 @@
   <br>
   <h1 class="text-success">Plan a New Trip: </h1>
     <div class="form-row">
-      <div class="form-group col-md-6">
       <%= form_for @trip do |f| %>
+      <div class="form-group col-md-6">
       <%= f.hidden_field :user_id, value: @trip.user_id %>
       <%= f.text_field :name, :class => "form-control", :placeholder => "Trip Name" %>
       </div>
