@@ -1,4 +1,12 @@
-require 'Faker'
+User.destroy_all
+Country.destroy_all
+Activity.destroy_all
+Like.destroy_all
+Review.destroy_all
+SelectedActivity.destroy_all
+TripCountry.destroy_all
+Trip.destroy_all
+
 
 User.create(name: "lauren732",  password: "laurenspassword", first_name: "Lauren", last_name: "Carne")
 User.create(name: "lovebug23",  password: "lovebug123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
