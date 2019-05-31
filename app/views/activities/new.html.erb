@@ -12,8 +12,8 @@
     <% end %>
   <br>
   <h1 class="text-success">Add a new activity: </h1>
+  <%= form_for @activity do |f| %>
     <div class="form-row">
-      <%= form_for @activity do |f| %>
       <div class="form-group col-md-6">
       <%= f.text_field :name, :class => "form-control text-dark", :placeholder => "Activity Name" %>
       </div>

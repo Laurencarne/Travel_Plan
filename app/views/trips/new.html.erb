@@ -12,14 +12,14 @@
   <% end %>
   <br>
   <h1 class="text-success">Plan a New Trip: </h1>
+  <%= form_for @trip do |f| %>
     <div class="form-row">
       <div class="form-group col-md-6">
-        <%= form_for @trip do |f| %>
       <%= f.hidden_field :user_id, value: @trip.user_id %>
-      <%= f.text_field :name, :class => "form-control", :placeholder => "Trip Name" %>
+      <%= f.text_field :name, :class => "form-control text-secondary", :placeholder => "Trip Name" %>
       </div>
       <div class="form-group col-md-6">
-      <%= f.text_field :travel_companions, :class => "form-control", :placeholder => "Travel Companions" %>
+      <%= f.text_field :travel_companions, :class => "form-control text-secondary", :placeholder => "Travel Companions" %>
       </div>
       <div class="form-group col-md-6">
       <%= f.label "Starts"%>
@@ -38,7 +38,7 @@
         </div>
       </div>
       <div class="form-group col-md-6">
-      <%= f.text_area :notes, :class => "form-control", :placeholder => "Notes" %>
+      <%= f.text_area :notes, :class => "form-control text-secondary", :placeholder => "Notes" %>
       </div>
       <div class="form-group col-md-6">
       <%=  f.submit class: "btn btn-info" %>

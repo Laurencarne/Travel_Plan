@@ -7,7 +7,11 @@
           <p class="lead">- In <%= @activity.country.name %></p>
         </div>
         <div class="col-4">
+          <% if @activity.image %>
           <img src="<%= @activity.image%>" class="img-fluid rounded mx-auto d-block" alt="<%= @activity.name%>'s Activity">
+          <% else %>
+          <img src="http://b-vlaw.com/wp-content/uploads/2018/07/DD-Coming-Soon-Retro-Style-Background-56400-Preview.jpg" class="img-fluid rounded mx-auto d-block" alt=" Coming Soon">
+          <% end %>
         </div>
       </div>
     </div>
