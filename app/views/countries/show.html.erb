@@ -10,7 +10,7 @@
               <%= form_for @trip_country do |f| %>
               <%= f.hidden_field :country_id, value: @country.id %>
               <%= f.collection_select :trip_id, @trips, :id, :name, :class => "form-control" %>
-              <%= f.submit "Add To Trip", :class => "btn btn-outline-secondary"%>
+              <%= f.submit "Add To Trip"%>
             <% end %>
             </div>
           <% end %>

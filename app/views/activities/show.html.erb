@@ -103,17 +103,7 @@
           </p>
         </div>
         <div class="card-footer text-muted d-flex justify-content-between">
-          <p> <%= review.likes.count %> Likes</p>
-
-          <% if review.user.name == current_user.name %>
-            <%= form_tag "/reviews/#{review.id}", method: 'delete' do %>
-            <%= hidden_field_tag "activity_id", @activity.id %>
-            <%= submit_tag "Delete", class: "btn btn-outline-secondary"%>
-            <% end %>
-
-          <% else %>
-          <% end %>
-
+          <%= review.likes.count %> Likes
           <%= form_tag likes_path, method: 'post' do %>
           <%= hidden_field_tag "activity_id", @activity.id %>
           <%= hidden_field_tag "like[review_id]", review.id %>
