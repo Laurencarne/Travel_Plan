@@ -23,6 +23,16 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+    if params[:redirect_to]
+      redirect_to reviews_path
+    else
+      redirect_to activity_path(params[:activity_id])
+    end
+  end
+
   private
 
   def review_params

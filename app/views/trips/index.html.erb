@@ -5,8 +5,13 @@
 
   <div class="container">
     <div class="">
-      <h1 class="display-4 mt-3">Wanderlust </h1>
-      <p class="lead d-flex justify-content-between">Quit your job, buy a ticket, get a tan fall in love, never return <button type="button" class="btn btn-outline-warning"><%= link_to 'Reviews', reviews_path, :class => "text-dark" %></button></p>
+      <span class = "lead d-flex justify-content-between align-items-center">
+        <h1 class="display-4 mt-3 ">Wanderlust </h1>
+      <a href="/trips/new" class="btn btn-info">Plan A New Trip</a>
+      </span>
+      <p class="lead d-flex justify-content-between">Quit your job, buy a ticket, get a tan fall in love, never return
+        <button type="button" class="btn btn-warning"><%= link_to 'Reviews', reviews_path, :class => "text-white" %></button>
+      </p>
     </div>
 
 <div class="container">

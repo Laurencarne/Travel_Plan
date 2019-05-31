@@ -23,17 +23,20 @@ class ActivitiesController < ApplicationController
   end
 
   def show
+    @review_id = 
     @reviews = @activity.reviews
     @like = Like.new
     @review = Review.new
-    @user = current_user.id
+    if logged_in?
+      @user = current_user.id
+    else
+    end
   end
 
   def edit
   end
 
   def update
-    byebug
     if @activity.update(activity_params)
       redirect_to activity_path(@activity)
     else
