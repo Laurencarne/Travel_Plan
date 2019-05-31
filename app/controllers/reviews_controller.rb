@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :authorized
+  skip_before_action :authorized, only: [:show, :new, :create, :destroy]
 
   def index
     if logged_in?
