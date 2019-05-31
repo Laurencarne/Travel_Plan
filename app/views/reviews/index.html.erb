@@ -17,12 +17,8 @@
 <div class="container">
   <% @reviews.each do |review| %>
     <div class="card text-center my-4">
-    <div class="card-header text-left text-muted d-flex justify-content-between">
+    <div class="card-header text-left text-muted">
       <%= link_to review.activity.name, activity_path(review.activity_id), :class => "text-info" %>
-      <%= form_tag "/reviews/#{review.id}", method: 'delete' do %>
-      <%= submit_tag "Delete", class: "btn btn-outline-secondary"%>
-      <%= hidden_field_tag "redirect_to", true %>
-      <% end %>
     </div>
       <div class="card-body">
         <p class="card-text"><%= review.title %></p>
@@ -45,10 +41,8 @@
         <%end%>
         </p>
       </div>
-      <div class="card-footer text-muted d-flex justify-content-between">
-        <span><%= review.likes.count %> <i class="far fa-thumbs-up text-success"></i></span>
-
-        <span class="font-italic"> Written on <%= review.created_at.strftime("%B %-d, %Y") %></span>
+      <div class="card-footer text-muted text-right d-flex justify-content-between">
+        <span><%= review.likes.count %> <i class="far fa-thumbs-up text-success"></i></span><span class="font-italic"> Written on <%= review.created_at.strftime("%B %-d, %Y") %></span>
       </div>
     </div>
   <% end %>

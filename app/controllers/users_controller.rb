@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update]
   before_action :authorized
   skip_before_action :authorized, only: [:new, :create, :home]
 
@@ -6,6 +7,9 @@ class UsersController < ApplicationController
   def home
     @reviews = Review.sort_highest
     @top_countries = Review.top_countries
+  end
+
+  def index
   end
 
   def new
@@ -17,10 +21,24 @@ class UsersController < ApplicationController
     if @user.valid?
       @user.save
       session[:user_id] = @user.id
-      redirect_to trips_path
+      redirect_to user_path(@user)
     else
       flash[:errors] = ["Please ensure: name is unique & first/last name do not contain numbers or symbols"]
       render :new
+    end
+  end
+
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @user.update(user_params)
+      redirect_to user_path(@user)
+    else
+      render :edit
     end
   end
 
@@ -30,4 +48,7 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :first_name, :last_name, :password)
   end
 
+  def set_user
+    @user = User.find(params[:id])
+  end
 end

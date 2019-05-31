@@ -37,6 +37,7 @@ class TripCountriesController < ApplicationController
   private
 
   def trip_country_params
+    byebug
     params.require(:trip_country).permit(:country_id, :trip_id)
   end
 
