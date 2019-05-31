@@ -1,5 +1,3 @@
-require 'Faker'
-
 User.create(name: "lauren732",  password: "laurenspassword", first_name: "Lauren", last_name: "Carne")
 User.create(name: "lovebug23",  password: "lovebug123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)
 User.create(name: "scoobydoo42",  password: "scoobydoo123", first_name: Faker::Name.first_name, last_name: Faker::Name.last_name)

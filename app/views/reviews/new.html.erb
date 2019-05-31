@@ -13,8 +13,8 @@
   <br>
   <h1 class="text-success">Add a new review: </h1>
     <div class="form-row">
-      <div class="form-group col-md-6">
       <%= form_for @review do |f| %>
+      <div class="form-group col-md-6">
       <%= f.hidden_field :user_id, value: @user %>
       <%= f.text_field :title, :class => "form-control", :placeholder => "Review Title" %>
       </div>
