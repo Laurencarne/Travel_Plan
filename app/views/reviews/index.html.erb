@@ -1,0 +1,55 @@
+<div class="container pt-4">
+  <div class="jumbotron text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1 class="display-4">Memory Lane </h1>
+        </div>
+        <div class="col-4">
+          <img src="https://images.unsplash.com/photo-1489402954857-207e3f591c0f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" class="img-fluid rounded mx-auto d-block float-right" alt="Small road with trees">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <% @reviews.each do |review| %>
+    <div class="card text-center my-4">
+    <div class="card-header text-left text-muted d-flex justify-content-between">
+      <%= link_to review.activity.name, activity_path(review.activity_id), :class => "text-info" %>
+      <%= form_tag "/reviews/#{review.id}", method: 'delete' do %>
+      <%= submit_tag "Delete", class: "btn btn-outline-secondary"%>
+      <%= hidden_field_tag "redirect_to", true %>
+      <% end %>
+    </div>
+      <div class="card-body">
+        <p class="card-text"><%= review.title %></p>
+        <p class="card-text"><%= review.review%></p>
+        <p class="card-text">
+        <% if review.rating == 0 %>
+          <i class="far fa-angry"></i>
+        <% elsif review.rating == nil %>
+          <i class="fas fa-question"></i>
+        <% elsif review.rating == 1 %>
+          <i class="fas fa-star text-warning"></i>
+        <% elsif review.rating == 2 %>
+          <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+        <% elsif review.rating == 3 %>
+          <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+        <% elsif review.rating == 4 %>
+          <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+        <% elsif review.rating == 5 %>
+          <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+        <%end%>
+        </p>
+      </div>
+      <div class="card-footer text-muted d-flex justify-content-between">
+        <span><%= review.likes.count %> <i class="far fa-thumbs-up text-success"></i></span>
+
+        <span class="font-italic"> Written on <%= review.created_at.strftime("%B %-d, %Y") %></span>
+      </div>
+    </div>
+  <% end %>
+</div>

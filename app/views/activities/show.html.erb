@@ -1,0 +1,140 @@
+<div class="container pt-4">
+  <div class="jumbotron text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1 class="display-4"><%= @activity.name %></h1>
+          <p class="lead">- In <%= @activity.country.name %></p>
+        </div>
+        <div class="col-4">
+          <% if @activity.image %>
+          <img src="<%= @activity.image%>" class="img-fluid rounded mx-auto d-block" alt="<%= @activity.name%>'s Activity">
+          <% else %>
+          <img src="http://b-vlaw.com/wp-content/uploads/2018/07/DD-Coming-Soon-Retro-Style-Background-56400-Preview.jpg" class="img-fluid rounded mx-auto d-block" alt=" Coming Soon">
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mb-3">
+  <div class="row">
+    <div class="col-sm-9">
+      <h2 class="text-warning"> Description: </h2>
+      <h3 class="text-muted"><%= @activity.notes%></h3>
+    </div>
+    <div class="col-sm-3">
+      <h5 class="card-title text-right"> Address: </h5>
+      <p class="card-text text-right text-muted">
+      <%= @activity.street_name%> <br>
+      <%= @activity.city%> <br>
+      <%= @activity.zip_code%>
+      <br>
+      <p class="card-text text-right text-muted"> Price: £<%= @activity.price%> </p>
+      <p class="card-text text-right text-muted"> Average Rating Score: <br><%= @activity.average_rating %> </p>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-3">
+    </div>
+  </div>
+</div>
+
+<div class="container my-5">
+  <h2 class="text-warning">Reviews: </h2>
+  <% if current_user %>
+  <div class="container">
+    <% if @review.errors.any? %>
+      <div id="error_explanation">
+      <h2 class="text-danger">There were some errors:</h2>
+      <ul>
+        <% @review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+      </div>
+      <% end %>
+    <h4 class="text-success">Add a new review: </h4>
+    <%= form_for @review do |f| %>
+      <div class="form-row">
+
+        <div class="form-group col-md-6">
+        <%= f.hidden_field :user_id, value: @user %>
+        <%= f.hidden_field :activity_id, value: @activity.id %>
+        <%= f.text_field :title, :class => "form-control text-secondary", :placeholder => "Review Title" %>
+        </div>
+        <div class="form-group col-md-6">
+        <%= f.text_field :rating, :class => "form-control text-secondary", :placeholder => "Rating - 1 to 5" %>
+        </div>
+        <div class="form-group col-md-6">
+        <%= f.text_field :review, :class => "form-control text-secondary", :placeholder => "Review" %>
+        </div>
+        <div class="form-group col-md-6">
+        </div>
+        <%=  f.submit class: "btn btn-info" %>
+        <% end %>
+      </div>
+      <% else %>
+    <% end %>
+
+<%  if @activity.reviews.length >= 1 %>
+    <% @reviews.each do |review| %>
+      <div class="card text-center my-4">
+      <div class="card-header text-left text-muted d-flex justify-content-between">
+        <span class="font-italic"> Written on <%= review.created_at.strftime("%B %-d, %Y") %></span>
+        <%= review.user.name %>
+      </div>
+        <div class="card-body">
+          <p class="card-text"><%= review.title %></p>
+          <p class="card-text"><%= review.review%></p>
+          <p class="card-text">
+          <% if review.rating == 0 %>
+            <i class="far fa-angry"></i>
+          <% elsif review.rating == nil %>
+            <i class="fas fa-question"></i>
+          <% elsif review.rating == 1 %>
+            <i class="fas fa-star text-warning"></i>
+          <% elsif review.rating == 2 %>
+            <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+          <% elsif review.rating == 3 %>
+            <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+          <% elsif review.rating == 4 %>
+            <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+          <% elsif review.rating == 5 %>
+            <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+          <%end%>
+          </p>
+        </div>
+        <% if logged_in? %>
+          <div class="card-footer text-muted d-flex justify-content-between">
+            <p> <%= review.likes.count %> Likes</p>
+
+            <% if review.user.name == current_user.name %>
+              <%= form_tag "/reviews/#{review.id}", method: 'delete' do %>
+              <%= hidden_field_tag "activity_id", @activity.id %>
+              <%= submit_tag "Delete", class: "btn btn-outline-secondary"%>
+              <% end %>
+
+            <% else %>
+            <% end %>
+
+            <%= form_tag likes_path, method: 'post' do %>
+            <%= hidden_field_tag "activity_id", @activity.id %>
+            <%= hidden_field_tag "like[review_id]", review.id %>
+            <%= button_tag type: 'submit', class: "btn btn-outline-secondary", id: "register-button" do %>
+          <i class="far fa-heart text-danger" aria-hidden="true"></i>
+            <% end %>
+          <% end %>
+          </div>
+          <% else %>
+          <div class="card-footer text-muted d-flex justify-content-between">
+            </div>
+            <% end %>
+      </div>
+    <% end %>
+    <% else %>
+    <h3 class="text-secondary mt-3"><i class="fas fa-search-location text-info"></i> No Reviews To See Yet...</h3>
+  <% end %>
+</div>

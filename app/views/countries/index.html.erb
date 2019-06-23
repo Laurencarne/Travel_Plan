@@ -1,0 +1,26 @@
+<!-- Jumbotron style for the heading -->
+<div class="container pt-4">
+  <div class="jumbotron text-center">
+    <h1 class="display-4">Wanderlust</h1>
+    <p class="lead">Explore via the continents</p>
+  </div>
+</div>
+<!-- Each statment to print out a card style box for each continent with image. -->
+<div class="container">
+  <br>
+  <div class="row">
+    <% @countries.each do |country| %>
+    <br>
+    <div class="col-sm-3 pt-4">
+      <div class="card text-center">
+        <img src="<%= Country.continent_image(country)%>" class="card-img-top" alt="European City">
+        <div class="card-body">
+          <h5 class="card-title"><%= country %></h5>
+          <p class="card-text"><%= Country.continent_information(country)%></p>
+          <!-- Link to the countries show page -->
+          <a href="/<%=country.downcase.tr(" ", "_")%>" class="btn btn-warning">Show Me More</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

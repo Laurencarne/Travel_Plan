@@ -15,7 +15,7 @@
   <%= form_for @trip do |f| %>
     <div class="form-row">
       <div class="form-group col-md-6">
-      <%= f.hidden_field :user_id, value: @user.id %>
+      <%= f.hidden_field :user_id, value: @trip.user_id %>
       <%= f.text_field :name, :class => "form-control text-secondary", :placeholder => "Trip Name" %>
       </div>
       <div class="form-group col-md-6">

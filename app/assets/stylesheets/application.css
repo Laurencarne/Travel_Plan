@@ -1,0 +1,67 @@
+div {
+  font-family: 'Quicksand', sans-serif;
+}
+
+#navbar {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.footer_login {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.login_page {
+  background-image: url("https://media.gadventures.com/media-server/cache/9e/73/9e73873ce100d7496f788048be6a0947.jpg");
+  background-position:center;
+  background-size:cover;
+}
+
+.login_container {
+    padding: 110px;
+}
+
+/* ::placeholder{
+    color: #ffffff!important;
+    opacity: 1;
+    font-size:18px!important;
+} */
+.form-login {
+    background-color: rgba(0,0,0,0.55);
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    color:white;
+}
+.form-control{
+    background:transparent!important;
+    color:white!important;
+    font-size: 18px!important;
+}
+
+.form-control {
+    border-radius: 10px;
+}
+
+.search-bar {
+  background:transparent;
+  font-size: 16px;
+  border-color:Dimgrey;
+  color: DimGrey;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  padding: .375rem .75rem;
+  display: inline-block;
+  width: auto;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+/*
+.search ::placeholder {
+    color:DimGrey;
+    opacity: 1;
+    font-size:18px!important;
+} */

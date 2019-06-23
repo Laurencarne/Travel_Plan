@@ -1,0 +1,52 @@
+<!-- Jumbotron style for the heading -->
+<div class="container pt-4">
+  <div class="jumbotron text-center">
+    <h1 class="display-4">The World is Your Oyster</h1>
+    <p class="lead">Explore the activities for inspiration</p>
+    <button type="button" class="btn btn-outline-dark"><%= link_to 'Or Create New Activity', new_activity_path, :class => "text-dark" %></button>
+  </div>
+</div>
+<!-- Each statment to print out a card style box for each continent with image. -->
+
+
+<div class="container">
+  <br>
+  <div class="row">
+    <% @activities.each do |activity| %>
+    <br>
+    <div class="col-sm-3 pt-4">
+      <div class="card text-center">
+        <img src="<%= activity.image%>" class="card-img-top" alt="European City">
+        <div class="card-body">
+          <h5 class="card-title"><%= activity.name %></h5>
+          <p class="card-text"><%= activity.notes.truncate_words(20) %></p>
+          <hr>
+          <% if activity.reviews.length == 0 %>
+          <i class="fas fa-question"></i>
+          <p>No Reviews Yet</p>
+          <% elsif %>
+          <p class="card-text">Average Rating:
+                <% if activity.average_rating == "Awaiting Reviews" %>
+                  <i class="far fa-angry text-danger"></i>
+                <% elsif activity.average_rating == nil %>
+                  <i class="fas fa-question"></i>
+                <% elsif activity.average_rating == 1 %>
+                  <i class="fas fa-star text-warning"></i>
+                <% elsif activity.average_rating == 2 %>
+                  <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                <% elsif activity.average_rating == 3 %>
+                  <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                <% elsif activity.average_rating == 4 %>
+                  <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                <% elsif activity.average_rating == 5 %>
+                  <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+                <%end%></p>
+                <%end  %>
+          <!-- Link to the countries show page -->
+          <%= link_to "Read More...", activity_path(activity), :class => "btn btn-info"%>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+</div>

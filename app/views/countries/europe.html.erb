@@ -1,0 +1,26 @@
+<!-- Jumbotron style for the heading -->
+<div class="container pt-4">
+  <div class="jumbotron text-center">
+    <h1 class="display-4">Welcome To Europe</h1>
+    <p class="lead">In terms of pure convenience, no continent can touch Europe’s diversity. With so many countries, cultures, languages, and varieties of cuisine packed into such a comparatively tiny place, you can spend a week in Europe and experience something wildly different every day.</p>
+  </div>
+</div>
+<!-- Each statment to print out a card style box for each continent with image. -->
+<div class="container">
+  <br>
+  <div class="row">
+    <% @europe.each do |country| %>
+    <br>
+    <div class="col-sm-3 pt-4">
+      <div class="card text-center">
+        <img src="<%= Country.country_image(country)%>" class="card-img-top" alt="European City">
+        <div class="card-body">
+          <h5 class="card-title"><%= country %></h5>
+          <p class="card-text"><%= Country.country_information(country)%></p>
+          <!-- Link to the countries show page -->
+          <a href="/countries/<%=Country.find_by(name: country).id%>" class="btn btn-warning">Show Me More</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

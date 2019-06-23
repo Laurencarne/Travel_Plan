@@ -1,0 +1,59 @@
+<!-- Jumbotron style for the heading -->
+<div class="container pt-4">
+  <div class="jumbotron text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1 class="display-4"><%= @trip.name%></h1>
+          <p class="lead"><%= @trip.start_date.strftime("%B %-d, %Y")%> <i class="fas fa-arrow-right"></i> <%= @trip.end_date.strftime("%B %-d, %Y")%> </p>
+          <% if @trip.travel_companions != nil %>
+            <p class="lead">Travelling with <%= @trip.travel_companions%></p>
+            <span class="lead">Travelling to <% @trip.countries.each do |country|%> <%= country.name %>, <% end %></span>
+            <% end %>
+            <div class="container">
+              <%= form_for @trip_country do |f| %>
+              <%= f.hidden_field :trip_id, value: @trip.id %>
+              <%= f.collection_select(:country_id, Country.all, :id, :name) %>
+              <%= f.submit "Add A Country", class: "btn btn-outline-info m-2"%>
+              <% end %>
+            </div>
+          </div>
+          <div class="col-4">
+            <img src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" class="card-img-top" alt="Sunglasses on the sand">
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<div class="container">
+  <br>
+  <div class="row">
+    <% @page_hash.each do |country, activities| %>
+    <br>
+    <div class="col-5 pb-4">
+      <div class="card text-center">
+      <img src="<%= @countries.find{|c| c.name == country}.country_image%>" class="card-img-top" alt="European City">
+        <div class="card-body">
+        <h5 class="card-title"><%= country %></h5>
+          <p class="card-text">You're off to great places, today is your day! Your mountain is waiting... So get on your way!.</p>
+          <!-- Link to the countries show page -->
+          <a href="/countries/<%= @countries.find{|c| c.name == country}.id%>" class="btn btn-warning">Vist <%= country %></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-7 text-center">
+      <br>
+      <h1 class="text-dark">Activities: </h1>
+          <% activities.each do |activity| %>
+            <p><%= link_to activity.name, activity_path(activity) %></p>
+          <% end %>
+          <%= form_for @selected_activity do |f| %>
+          <% @tripid = TripCountry.find_by(trip_id: @trip.id, country_id: @countries.find{|c| c.name == country}.id)%>
+          <%= f.hidden_field :trip_country_id, value: @tripid.id %>
+          <%= f.collection_select(:activity_id, Activity.activities_for_country(country), :id, :name) %>
+          <%= f.submit "Add An Activity", class: "btn btn-outline-info m-2" %>
+          <% end %>
+        </div>
+    <% end %>
+  </div>
+</div>

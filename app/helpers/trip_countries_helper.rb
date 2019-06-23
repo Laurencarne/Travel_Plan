@@ -1,0 +1,2 @@
+module TripCountriesHelper
+end

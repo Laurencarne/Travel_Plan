@@ -1,0 +1,42 @@
+<div class="container pt-4">
+  <div class="jumbotron text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h1 class="display-4">Welcome To <%= @country.name%></h1>
+          <p class="lead"><%= @country.information%></p>
+          <% if logged_in? %>
+            <div class="container">
+              <%= form_for @trip_country do |f| %>
+              <%= f.hidden_field :country_id, value: @country.id %>
+              <%= f.collection_select :trip_id, @trips, :id, :name, :class => "form-control" %>
+              <%= f.submit "Add To Trip", :class => "btn btn-outline-secondary"%>
+            <% end %>
+            </div>
+          <% end %>
+          </div>
+          <div class="col-4">
+            <img src="<%= @country.country_image%>" class="img-fluid rounded mx-auto d-block" alt="<%= @country.name%> City">
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<div class="container">
+  <br>
+  <div class="row">
+    <% @country.activities.each do |activity| %>
+    <br>
+    <div class="col-sm-3 pb-4">
+      <div class="card text-center">
+        <img src="<%=activity.image%>" class="card-img-top" alt="Activity">
+        <div class="card-body">
+          <h2 class="card-title"><%= activity.name %></h2>
+          <p class="card-text"><%= activity.notes%></p>
+          <!-- Link to the countries show page -->
+          <button type="button" class="btn btn-warning" class="card-link"><%= link_to 'Read More', activity %></button>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

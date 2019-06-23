@@ -12,11 +12,9 @@ class TripsController < ApplicationController
 
   def new
     @trip = Trip.new
-    current_user
   end
 
   def create
-    byebug
     @trip = Trip.new(trip_params)
     if @trip.valid?
       @trip.save

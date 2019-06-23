@@ -1,0 +1,26 @@
+<!-- Jumbotron style for the heading -->
+<div class="container pt-4">
+  <div class="jumbotron text-center">
+    <h1 class="display-4">Welcome To Africa</h1>
+    <p class="lead">Its name means “sunny place” in the Berber tongue, but “Africa” may as well be a synonym for “vastness.” A truly massive continent comprising over 20% of the planet’s available land, Africa is home to the world’s largest desert, its longest river, its hottest temperatures, and hundreds of dialects and cultures spread among a billion people. </p>
+  </div>
+</div>
+<!-- Each statment to print out a card style box for each continent with image. -->
+<div class="container">
+  <br>
+  <div class="row">
+    <% @africa.each do |country| %>
+    <br>
+    <div class="col-sm-3 pt-4">
+      <div class="card text-center">
+        <img src="<%= Country.country_image(country)%>" class="card-img-top" alt="African City">
+        <div class="card-body">
+          <h5 class="card-title"><%= country %></h5>
+          <p class="card-text"><%= Country.country_information(country)%></p>
+          <!-- Link to the countries show page -->
+          <a href="/countries/<%=Country.find_by(name: country).id%>" class="btn btn-warning">Show Me More</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

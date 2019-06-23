@@ -1,0 +1,67 @@
+
+<div class="jumbotron vertical-center text-center">
+    <div class="container">
+        <br>
+        <h1 class="">Wanderlust</h1>
+        <p class="lead">Search. Plan. Enjoy.</p>
+        <a href="countries#index" class="btn btn-lg btn-light">Countries</a>
+        <a href="activities#index" class="btn btn-lg btn-light">Activities</a>
+    </div>
+</div>
+<div class="col-7 pb-4 float-left">
+  <h1 class="text-center text-dark"><i class="fas fa-trophy text-warning"></i> Top Activities</h1>
+  <%@counter = 0%>
+  <table class="table table-hover table-dark text-center table-sm">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col"><strong>Activity</strong></th>
+        <th scope="col"><strong>Description</strong></th>
+        <th scope="col"><strong>Star Rating</strong></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @reviews.each do |review| %>
+      <tr>
+        <th scope="row"><%= @counter +1 %></th>
+        <td> <a href="/activities/<%=review.activity.id%>", class="text-white"> <%= review.activity.name %> in <%= review.activity.country.name %> </a> </td>
+        <td> <a href="/activities/<%=review.activity.id%>", class="text-white"> <%= review.activity.notes%> </a> </td>
+        <td><% if review.rating == 0 %>
+          <i class="far fa-angry"></i>
+          <% elsif review.rating == nil %>
+            <i class="fas fa-question"></i>
+          <% elsif review.rating == 1 %>
+            <i class="fas fa-star text-warning"></i>
+          <% elsif review.rating == 2 %>
+            <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+          <% elsif review.rating == 3 %>
+            <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+          <% elsif review.rating == 4 %>
+            <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+          <% elsif review.rating == 5 %>
+            <i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i><i class="fas fa-star text-warning"></i>
+          <%end%></td>
+        </tr>
+      <%@counter += 1 %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<div class="col-5 pb-4 pt-0 float-right">
+  <h1 class="text-center text-dark"><i class="fas fa-award text-warning"></i> Top Destinations</h1>
+  <%@counter = 1%>
+    <% @top_countries.each do |top_country| %>
+    <% @country = Country.find(top_country) %>
+      <div class="card text-center mt-3">
+        <img src="<%= Country.country_image(@country.name)%>" class="card-img-top" alt="European City">
+        <div class="card-body">
+          <h5 class="card-title"><%= @counter.ordinalize %> Place <i class="fas fa-medal text-danger"></i></h5>
+          <h5 class="card-title"><%= @country.name %></h5>
+          <p class="card-text"><%= Country.country_information(@country.name)%></p>
+          <!-- Link to the countries show page -->
+          <a href="/countries/<%=top_country%>" class="btn btn-warning">Show Me More</a>
+        </div>
+      </div>
+      <%@counter += 1 %>
+  <% end %>
+</div>

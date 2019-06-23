@@ -1,0 +1,26 @@
+<!-- Jumbotron style for the heading -->
+<div class="container pt-4">
+  <div class="jumbotron text-center">
+    <h1 class="display-4">Welcome To Oceania</h1>
+    <p class="lead">A massive swath of the South Pacific dotted with islands both huge and miniscule, Oceania is a region simultaneously divided and united by the sea. The coastlines of Australia and New Zealand – the largest nations down in this part of the world – are legendary and endless, but it’s what goes on inland that really makes these places special. </p>
+  </div>
+</div>
+<!-- Each statment to print out a card style box for each continent with image. -->
+<div class="container">
+  <br>
+  <div class="row">
+    <% @oceania.each do |country| %>
+    <br>
+    <div class="col-sm-3 pt-4">
+      <div class="card text-center">
+        <img src="<%= Country.country_image(country)%>" class="card-img-top" alt="European City">
+        <div class="card-body">
+          <h5 class="card-title"><%= country %></h5>
+          <p class="card-text"><%= Country.country_information(country)%></p>
+          <!-- Link to the countries show page -->
+          <a href="/countries/<%=Country.find_by(name: country).id%>" class="btn btn-warning">Show Me More</a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
