@@ -1,24 +1,21 @@
-# README
+Travel Plan
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![Travel-Plan-Home-Page](https://imgur.com/GBF0GK0)
 
-Things you may want to cover:
+This is our Module Three Ruby on Rails app.
 
-* Ruby version
+* It is an app to plan your holidays and adventures, explore countries and activities and put togetehr amazing travel itineraries. 
 
-* System dependencies
+* You can browse the countries of the world and read about each one.
 
-* Configuration
+* See a list of activities in each country and read more about those activities.
 
-* Database creation
+* You can leave reviews for each activity or rate other peoples reviews.
 
-* Database initialization
+* Create new travel itineraries and activities.
 
-* How to run the test suite
+* It has a simple log in and log out feature to store users trips.
 
-* Services (job queues, cache servers, search engines, etc.)
+* The main home page displays the top activity reviews and top countries.
 
-* Deployment instructions
-
-* ...
+We had 5 days to create the project we hope you enjoy.
