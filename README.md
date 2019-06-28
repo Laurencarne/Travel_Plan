@@ -1,6 +1,6 @@
 Travel Plan
 
-![Travel-Plan-Home-Page]("https://imgur.com/GBF0GK0")
+![Travel-Plan-Home-Page](https://i.imgur.com/GBF0GK0.png)
 
 This is our Module Three Ruby on Rails app.
 
