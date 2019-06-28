@@ -1,6 +1,6 @@
 Travel Plan
 
-![Travel-Plan-Home-Page](https://i.imgur.com/GBF0GK0.png)
+[![Travel-Plan-Watch-The-Demo](https://i.imgur.com/Wt5NHiA.png)](https://youtu.be/UJRhGoMHo0I)
 
 This is our Module Three Ruby on Rails app.
 It is an app to plan your holidays and adventures, explore countries and activities and put together amazing travel itineraries. 
