@@ -1,5 +1,8 @@
 class LikesController < ApplicationController
   before_action :set_like, only: [:show, :edit, :update, :destroy]
+  before_action :authorized
+  skip_before_action :authorized, only: [:index, :show]
+
   def new
     @like = Like.new
 
